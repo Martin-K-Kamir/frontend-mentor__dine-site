@@ -1,0 +1,20 @@
+.stack {
+	display         : flex;
+	flex-direction  : column;
+	justify-content : start;
+
+	--space         : initial; // Reset the variable to its initial value.
+
+	.btn {
+		align-self : start;
+	}
+
+	& > * {
+		margin-block : 0;
+	}
+
+	& > * + * {
+		--_space           : var(--space, #{$space});
+		margin-block-start : var(--_space);
+	}
+}

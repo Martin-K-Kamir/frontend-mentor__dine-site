@@ -1,0 +1,44 @@
+[class*='btn'] {
+	--transition-duration : 150ms;
+	--transition-timing   : ease-out;
+}
+
+.btn {
+	--_fg            : var(--fg, var(--clr-neutral-1));
+	--_bg            : var(--bg, var(--clr-neutral-2));
+	--_border-color  : var(--_bg);
+	--outline-color  : var(--_bg);
+
+	cursor           : pointer;
+	display          : inline-flex;
+	align-items      : center;
+	padding          : 1.1em 2.25em;
+	font-size        : var(--fs-3);
+	font-weight      : var(--fw-3);
+	letter-spacing   : 0.125em;
+	line-height      : var(--line-height-1);
+	text-transform   : uppercase;
+	color            : hsl(var(--_fg));
+	background-color : hsl(var(--_bg));
+	border           : 0.15em solid hsl(var(--_border-color));
+	transition       : background-color var(--transition-duration) var(--transition-timing), border var(--transition-duration) var(--transition-timing);
+
+	@media (hover : hover) {
+		&:where(:hover, :focus-visible) {
+			color            : hsl(var(--_bg));
+			background-color : hsl(var(--_fg));
+		}
+	}
+
+	&[data-type='ghost'] {
+		--_bg           : transparent;
+		--_border-color : var(--_fg);
+		--outline-color : var(--_fg);
+
+		@media (hover : hover) {
+			&:where(:hover, :focus-visible) {
+				color : initial;
+			}
+		}
+	}
+}
