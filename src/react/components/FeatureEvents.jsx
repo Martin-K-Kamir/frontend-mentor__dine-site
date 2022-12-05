@@ -10,7 +10,7 @@ export default function FeatureEvents(props) {
                         <Image name={event.image.name} alt={event.image.alt}/>
                         <div className="feature-events__content">
                             <h2 className="title-3">{event.name}</h2>
-                            <p>{event.desc}</p>
+                            <p className="measure-4">{event.desc}</p>
                             <Button to="/reservation" content="book a table"/>
                         </div>
                         <ul className="feature-events__list" role="list">

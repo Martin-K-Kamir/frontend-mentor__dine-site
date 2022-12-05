@@ -16,18 +16,18 @@ export default function HomePage() {
                 <div className="wrapper">
                     <div className="zpattern">
                         <div>
-                            <Image name="enjoyable-place" alt="A view of a nice valley where the river flows and sheep can be observed"/>
+                            <Image name="enjoyable-place" alt="A view of a nice valley where the river flows and sheep can be observed" descriptorW={[[540, 1080], [573, 1146], [327, 654]]}/>
                             <div className="stack">
                                 <h2 className="title-3">Enjoyable place for all the family</h2>
-                                <p>Our relaxed surroundings make dining with us a great experience for everyone. We can even arrange a tour of the
+                                <p className="measure-4">Our relaxed surroundings make dining with us a great experience for everyone. We can even arrange a tour of the
                                     farm before your meal.</p>
                             </div>
                         </div>
                         <div>
-                            <Image name="locally-sourced" alt="Chef finishing plating of Fish with White Asparagus"/>
+                            <Image name="locally-sourced" alt="Chef finishing plating of Fish with White Asparagus" descriptorW={[[540, 1080], [573, 1146], [327, 654]]}/>
                             <div className="stack">
                                 <h2 className="title-3">The most locally sourced food</h2>
-                                <p>All our ingredients come directly from our farm or local fishery. So you can be sure that you’re eating the
+                                <p className="measure-4">All our ingredients come directly from our farm or local fishery. So you can be sure that you’re eating the
                                     freshest, most sustainable food.</p>
                             </div>
                         </div>
@@ -40,7 +40,7 @@ export default function HomePage() {
                     <div className="switcher">
                         <div>
                             <h2 className="title-3">A few highlights from our menu</h2>
-                            <p>We cater for all dietary requirements, but here’s a glimpse at some of our diner’s favourites. Our menu is revamped
+                            <p className="measure-4">We cater for all dietary requirements, but here’s a glimpse at some of our diner’s favourites. Our menu is revamped
                                 every season.</p>
                         </div>
                         <div>
@@ -99,7 +99,7 @@ export default function HomePage() {
                     <div className="wrapper">
                         <div className="switcher">
                             <div>
-                                <h2 className="title-3">Ready to make a reservation?</h2>
+                                <h2 className="[ title-3 ] [ measure-7 ]">Ready to make a reservation?</h2>
                             </div>
                             <div>
                                 <Button to="/reservation" content="book a table" type="ghost"/>

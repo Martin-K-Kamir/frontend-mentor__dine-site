@@ -35,7 +35,7 @@ export default function Button(props) {
              onClick={handleClick}
              {...type}
         >
-            <span>{props.content}</span>
+            {props.content}
         </Tag>
     );
 }

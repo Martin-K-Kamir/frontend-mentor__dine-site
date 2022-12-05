@@ -1,15 +1,43 @@
 
 .zpattern {
-	& > div:nth-child(even) div:only-child,
-	& > div:nth-child(even), {
-		display        : grid;
-		grid-auto-flow : dense;
-		direction      : rtl;
+
+	&__block,
+	& > div {
+		--_space          : var(--space, #{$space});
+		--space           : initial; // Reset the variable to its initial value.
+
+		display           : grid;
+		align-items       : center;
+		gap               : var(--_space);
+
+		@media (width > $width-lg) {
+			grid-auto-columns : 1fr;
+			grid-auto-flow    : column;
+		}
 	}
 
-	& > div:nth-child(even) div:only-child > div,
+	&__media,
+	& > div > :where(picture, img, svg, video, iframe) {
+		inline-size : 100%;
+		object-fit  : cover;
+	}
+
+	&__block:nth-child(odd) &__content,
+	& > div:nth-child(odd) > div {
+
+		@media (width > $width-lg) {
+			justify-self : end;
+		}
+	}
+
+	&__block:nth-child(even) &__content,
 	& > div:nth-child(even) > div {
-		direction : ltr;
+
+
+		@media (width > $width-lg) {
+			order        : -1;
+			justify-self : start;
+		}
 	}
 }
 

@@ -1,3 +1,4 @@
+// d 1080 540 t 1146 573 m 654 327
 export default function Image(props) {
     const imageSizes = props.imageSizes ? [...props.imageSizes] : ["desktop", "tablet", "mobile"]
     const mediaSizes = props.mediaSizes ? [...props.mediaSizes] : ["64em", "30em"];
@@ -13,24 +14,22 @@ export default function Image(props) {
         }
     }
 
-    function getSrcSet(deviceSize) {
-        const descriptor = descriptorW ? descriptorW : descriptorX;
-
-        return descriptor.map((descriptor) => {
+    function getSrcSet(deviceSize, x) {
+        return descriptorX.map((descriptor, i) => {
             return formats.map(format => {
-                return `${getPath()}-${deviceSize}${descriptor !== "1x" ? `@${descriptor}` : ""}.${format} ${descriptor}`
+                return `${getPath()}-${deviceSize}${descriptor !== "1x" ? `@${descriptor}` : ""}.${format} ${descriptorW ? descriptorW[x][i] + "w" : descriptor}`;
             })
         })
     }
 
 
     return (
-        <picture>
+        <picture className={props.className}>
             {imageSizes.map((deviceSize, index) => (
                 <source
                     key={`key${index}`}
-                    media={mediaSizes[index] ? `(min-width: ${mediaSizes[index]})` : ""}
-                    srcSet={getSrcSet(deviceSize)}
+                    media={mediaSizes[index] ? `(width > ${mediaSizes[index]})` : ""}
+                    srcSet={getSrcSet(deviceSize, index)}
                 />
             ))}
 

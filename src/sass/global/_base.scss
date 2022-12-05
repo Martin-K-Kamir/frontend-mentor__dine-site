@@ -1,5 +1,4 @@
 
-
 body {
 	font-family      : var(--ff-body);
 	font-size        : var(--fs-fluid-1);
@@ -7,6 +6,11 @@ body {
 	line-height      : var(--line-height-3);
 	color            : hsl(var(--clr-secondary-3));
 	background-color : hsl(var(--clr-neutral-1));
+}
+
+picture > img {
+	inline-size : inherit;
+	object-fit: inherit;
 }
 
 :where(a, button) {

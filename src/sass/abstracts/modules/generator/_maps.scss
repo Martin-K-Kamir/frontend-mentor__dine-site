@@ -180,13 +180,13 @@ $measures        : (
 		'utils-property' : '--measure',
 		'breakpoints' : auto,
 		'break-at' : 'min',
-		'measure-1' : 9ch,
-		'measure-2' : 21ch,
-		'measure-3' : 25ch,
-		'measure-4' : 30ch,
-		'measure-5' : 45ch,
-		'measure-6' : 72ch,
-		'measure-7' : 82ch,
+		'measure-1' : 13ch, // very used
+		'measure-2' : 23ch, // not
+		'measure-3' : 28ch, // not
+		'measure-4' : 38ch, // very used
+		'measure-5' : 48ch, // not
+		'measure-6' : 72ch, // used
+		'measure-7' : 82ch, // used
 ) !default;
 
 $radius          : (

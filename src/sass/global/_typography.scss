@@ -1,9 +1,11 @@
 :where([class*='title-'], p) {
-	max-inline-size : var(--measure);
+	--_measure      : var(--measure, var(--measure-7));
+
+	max-inline-size : var(--_measure);
 }
 
 p {
-	//--measure : var(--measure-6);
+	--measure : var(--measure-6);
 }
 
 [class*='title-'] {
@@ -14,20 +16,24 @@ p {
 }
 
 .title-1 {
+	--measure      : var(--measure-3);
 	font-size      : var(--fs-3);
 	font-weight    : var(--fw-3);
 	letter-spacing : var(--letter-spacing-5);
 }
 
 .title-2 {
+	--measure : var(--measure-3);
 	font-size : var(--fs-4);
 }
 
 .title-3 {
+	--measure : var(--measure-1);
 	font-size : var(--fs-fluid-2);
 }
 
 .title-4 {
+	--measure   : var(--measure-1);
 	font-size   : var(--fs-fluid-3);
 	font-weight : var(--fw-1);
 }

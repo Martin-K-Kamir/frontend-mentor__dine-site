@@ -12,7 +12,7 @@ export default function Hero(props) {
                     <Link to="/" aria-label="homepage"><Logo/></Link>
                     <div className="stack">
                         <h1 className="title-4">{props.title}</h1>
-                        <p>{props.desc}</p>
+                        <p className="measure-4">{props.desc}</p>
                         {props.button && <Button to={props.button.to} content={props.button.content} type="ghost"/>}
                     </div>
                 </div>
