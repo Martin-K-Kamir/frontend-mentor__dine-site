@@ -159,14 +159,11 @@ $displays        : (
 ) !default;
 
 $letter-spacings : (
-		'letter-spacing-1' : -0.005em,
-		'letter-spacing-2' : 0.025em,
+		'letter-spacing-1' : -0.05em,
+		'letter-spacing-2' : -0.01em,
 		'letter-spacing-3' : 0.05em,
 		'letter-spacing-4' : 0.075em,
-		'letter-spacing-5' : 0.15em,
-		'letter-spacing-6' : 0.5em,
-		'letter-spacing-7' : 0.75em,
-		'letter-spacing-8' : 1em,
+		'letter-spacing-5' : 0.125em,
 ) !default;
 
 $line-heights    : (
