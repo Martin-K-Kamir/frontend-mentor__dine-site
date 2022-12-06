@@ -1,0 +1,23 @@
+
+.hero {
+	min-block-size : 50rem;
+
+	@media (width <= $width-md) {
+		min-block-size : 100vh;
+	}
+
+	&__container {
+		display        : flex;
+		flex-direction : column;
+	}
+
+	&__content {
+		margin-block : auto;
+	}
+
+	img {
+		@media (width <= $width-lg) {
+			object-position : top;
+		}
+	}
+}

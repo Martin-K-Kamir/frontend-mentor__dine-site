@@ -141,6 +141,7 @@ $self-justifys   : (
 		'self-justify-end' : 'end',
 ) !default;
 
+
 $directions      : (
 		'utils' : 'class',
 		'utils-property' : 'flex-direction',
@@ -159,6 +160,8 @@ $displays        : (
 ) !default;
 
 $letter-spacings : (
+		'utils' : 'both',
+		'utils-property' : 'letter-spacing',
 		'letter-spacing-1' : -0.05em,
 		'letter-spacing-2' : -0.01em,
 		'letter-spacing-3' : 0.05em,

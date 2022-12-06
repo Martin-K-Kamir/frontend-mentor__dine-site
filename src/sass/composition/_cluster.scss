@@ -1,0 +1,11 @@
+
+.cluster {
+	--_space           : var(--space, #{$space});
+
+	display         : flex;
+	flex-wrap       : wrap;
+	gap             : var(--_space);
+	justify-content : flex-start;
+	align-items     : center;
+	--space         : initial; // Reset the variable to its initial value.
+}

@@ -52,3 +52,11 @@
 :where([class*="align"], [class*="direction"], [class*="justify"]) {
 	display : flex;
 }
+
+.text-uppercase {
+	text-transform : uppercase;
+}
+
+.margin-center {
+	margin-inline : auto;
+}

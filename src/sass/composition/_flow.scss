@@ -1,0 +1,5 @@
+.flow {
+	--_space : var(--space, #{$space});
+	gap      : var(--_space);
+	--space  : initial; // Reset the variable to its initial value.
+}

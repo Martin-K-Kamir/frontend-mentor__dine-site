@@ -5,7 +5,11 @@
 @import 'global/typography';
 
 @import 'block/button';
+@import 'block/icon';
+@import 'block/hero';
 
+@import 'composition/cluster';
+@import 'composition/flow';
 @import 'composition/wrapper';
 @import 'composition/grid';
 @import 'composition/switcher';

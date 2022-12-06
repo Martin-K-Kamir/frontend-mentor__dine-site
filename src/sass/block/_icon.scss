@@ -1,0 +1,11 @@
+
+.icon {
+	--_icon-size : var(--icon-size);
+	--_icon-fg   : var(--icon-fg, inherit);
+
+	color        : hsl(var(--_icon-fg));
+	fill         : CurrentColor;
+	inline-size  : var(--_icon-size);
+	block-size   : var(--_icon-size);
+	flex-shrink  : 0;
+}
