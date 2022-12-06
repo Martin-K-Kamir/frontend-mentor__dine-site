@@ -92,14 +92,12 @@ export default function HomePage() {
                     />
                 </div>
             </section>
-            <section className="[ bg-neutral-2 fg-neutral-1 ]">
-                <div className="stacked">
+            <section className="[ stacked ] [ bg-neutral-2 fg-neutral-1 ]" data-extrinsic-sizing="true">
                     <Image name="ready-bg" descriptorW={[[1440, 2880], [768, 1536], [375, 750]]}/>
                     <div className="[ wrapper ] [ text-center align-center direction-column//below-lg justify-center//below-lg justify-between//above-lg ]">
                         <h2 className="[ title-3 ] [ measure-7 ]">Ready to make a reservation?</h2>
                         <Button to="/reservation" content="book a table" type="ghost"/>
                     </div>
-                </div>
             </section>
         </main>
     );
