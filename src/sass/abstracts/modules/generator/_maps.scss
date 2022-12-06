@@ -113,7 +113,7 @@ $aligns          : (
 
 $justifys        : (
 		'utils' : 'class',
-		'utils-property' : 'justify-items',
+		'utils-property' : 'justify-content',
 		'breakpoints' : auto,
 		'break-at' : 'both',
 		'justify-center' : 'center',
@@ -169,10 +169,9 @@ $letter-spacings : (
 $line-heights    : (
 		'utils' : 'both',
 		'utils-property' : 'line-height',
-		'line-height-1' : 0.9,
+		'line-height-1' : 1,
 		'line-height-2' : 1.2,
 		'line-height-3' : 1.5,
-		'line-height-title' : calc(2px + 2ex + 2px),
 ) !default;
 
 $measures        : (

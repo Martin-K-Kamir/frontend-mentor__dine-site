@@ -28,6 +28,12 @@
 							generator.$line-heights,
 							generator.$letter-spacings,
 							generator.$measures,
+							generator.$text-aligns,
+							generator.$aligns,
+							generator.$justifys,
+							generator.$self-aligns,
+							generator.$self-justifys,
+							generator.$directions,
 					)
 			))
 	);
@@ -41,4 +47,8 @@
 	--outline-color : currentColor;
 	--body-space    : #{math.clamped(2rem, 6rem, $width-md, $width-xl)};
 	--body-size     : min(100% - var(--body-space) * 2, 69.375rem);
+}
+
+:where([class*="align"], [class*="direction"], [class*="justify"]) {
+	display : flex;
 }

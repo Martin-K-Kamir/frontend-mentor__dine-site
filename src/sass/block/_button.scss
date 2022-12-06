@@ -15,7 +15,7 @@
 	font-size              : var(--fs-3);
 	font-weight            : var(--fw-3);
 	letter-spacing         : var(--letter-spacing-5);
-	line-height            : 1;
+	line-height            : var(--line-height-1);
 	text-transform         : uppercase;
 	color                  : hsl(var(--_fg));
 	background-color       : hsl(var(--_bg));

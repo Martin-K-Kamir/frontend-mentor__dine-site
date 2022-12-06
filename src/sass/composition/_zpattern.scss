@@ -33,7 +33,6 @@
 	&__block:nth-child(even) &__content,
 	& > div:nth-child(even) > div {
 
-
 		@media (width > $width-lg) {
 			order        : -1;
 			justify-self : start;

@@ -1,5 +1,4 @@
 import Hero from "../components/Hero.jsx";
-import {Link} from "react-router-dom";
 import FeatureEvents from "../components/FeatureEvents.jsx";
 import Image from "../components/Image";
 import Button from "../components/Button.jsx";
@@ -96,15 +95,9 @@ export default function HomePage() {
             <section className="[ bg-neutral-2 fg-neutral-1 ]">
                 <div className="stacked">
                     <Image name="ready-bg"/>
-                    <div className="wrapper">
-                        <div className="switcher">
-                            <div>
-                                <h2 className="[ title-3 ] [ measure-7 ]">Ready to make a reservation?</h2>
-                            </div>
-                            <div>
-                                <Button to="/reservation" content="book a table" type="ghost"/>
-                            </div>
-                        </div>
+                    <div className="[ wrapper ] [ text-center align-center direction-column//below-lg justify-center//below-lg justify-between//above-lg ]">
+                        <h2 className="[ title-3 ] [ measure-7 ]">Ready to make a reservation?</h2>
+                        <Button to="/reservation" content="book a table" type="ghost"/>
                     </div>
                 </div>
             </section>
