@@ -103,12 +103,13 @@ $text-aligns     : (
 
 $aligns          : (
 		'utils' : 'class',
-		'utils-property' : 'align-items',
+		'utils-property' : 'align-content',
 		'breakpoints' : auto,
 		'break-at' : 'both',
 		'align-center' : 'center',
 		'align-start' : 'start',
 		'align-end' : 'end',
+		'align-between' : 'space-between',
 ) !default;
 
 $justifys        : (
@@ -118,7 +119,28 @@ $justifys        : (
 		'break-at' : 'both',
 		'justify-center' : 'center',
 		'justify-start' : 'start',
+		'justify-end' : 'start',
 		'justify-between' : 'space-between',
+) !default;
+
+$item-aligns          : (
+		'utils' : 'class',
+		'utils-property' : 'align-items',
+		'breakpoints' : auto,
+		'break-at' : 'both',
+		'items-align-center' : 'center',
+		'items-align-start' : 'start',
+		'items-align-end' : 'end',
+) !default;
+
+$item-justifys        : (
+		'utils' : 'class',
+		'utils-property' : 'justify-items',
+		'breakpoints' : auto,
+		'break-at' : 'both',
+		'items-justify-center' : 'center',
+		'items-justify-start' : 'start',
+		'items-justify-end' : 'end',
 ) !default;
 
 $self-aligns     : (
@@ -144,11 +166,11 @@ $self-justifys   : (
 
 $directions      : (
 		'utils' : 'class',
-		'utils-property' : 'flex-direction',
+		'utils-property' : 'grid-auto-flow',
 		'breakpoints' : auto,
 		'break-at' : 'both',
-		'direction-column' : 'column',
-		'direction-row' : 'row',
+		'direction-column' : 'row',
+		'direction-row' : 'column',
 ) !default;
 
 $displays        : (

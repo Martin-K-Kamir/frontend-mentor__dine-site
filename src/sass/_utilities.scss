@@ -31,6 +31,8 @@
 							generator.$text-aligns,
 							generator.$aligns,
 							generator.$justifys,
+							generator.$item-aligns,
+							generator.$item-justifys,
 							generator.$self-aligns,
 							generator.$self-justifys,
 							generator.$directions,
@@ -38,25 +40,20 @@
 			))
 	);
 
-
 	--ff-primary    : 'League Spartan', sans-serif;
 	--ff-body       : var(--ff-primary);
 	--ff-heading    : var(--ff-primary);
 	--outline-size  : max(1px, 0.15em);
 	--outline-style : solid;
 	--outline-color : currentColor;
-	--body-space    : #{math.clamped(2rem, 6rem, $width-md, $width-xl)};
+	--body-space    : #{math.clamped(1.5rem, 10.3rem, $width-xs, $width-xl)};
 	--body-size     : min(100% - var(--body-space) * 2, 69.375rem);
 }
 
 :where([class*="align"], [class*="direction"], [class*="justify"]) {
-	display : flex;
+	display : grid;
 }
 
 .text-uppercase {
 	text-transform : uppercase;
-}
-
-.margin-center {
-	margin-inline : auto;
 }

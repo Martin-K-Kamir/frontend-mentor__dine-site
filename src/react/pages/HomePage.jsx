@@ -9,13 +9,13 @@ export default function HomePage() {
             <Hero title="Exquisite dining since 1989"
                   desc="Experience our seasonal menu in beautiful country surroundings. Eat the freshest produce from the comfort of our farmhouse."
                   button={{to: "/reservation", content: "Book a table"}}
-                  image={{name: "hero-bg", dir: "homepage"}}
+                  image={{dir: "homepage"}}
             />
             <section>
                 <div className="wrapper">
                     <div className="zpattern">
                         <div>
-                            <Image name="enjoyable-place" alt="A view of a nice valley where the river flows and sheep can be observed" descriptorW={[[540, 1080], [573, 1146], [327, 654]]}/>
+                            <Image name="enjoyable-place" alt="A view of a nice valley where the river flows and sheep can be observed" resolutionW={[[540, 1080], [573, 1146], [327, 654]]}/>
                             <div className="stack">
                                 <h2 className="title-3">Enjoyable place for all the family</h2>
                                 <p className="measure-4">Our relaxed surroundings make dining with us a great experience for everyone. We can even arrange a tour of the
@@ -23,7 +23,7 @@ export default function HomePage() {
                             </div>
                         </div>
                         <div>
-                            <Image name="locally-sourced" alt="Chef finishing plating of Fish with White Asparagus" descriptorW={[[540, 1080], [573, 1146], [327, 654]]}/>
+                            <Image name="locally-sourced" alt="Chef finishing plating of Fish with White Asparagus" resolutionW={[[540, 1080], [573, 1146], [327, 654]]}/>
                             <div className="stack">
                                 <h2 className="title-3">The most locally sourced food</h2>
                                 <p className="measure-4">All our ingredients come directly from our farm or local fishery. So you can be sure that you’re eating the
@@ -93,8 +93,8 @@ export default function HomePage() {
                 </div>
             </section>
             <section className="[ stacked ] [ bg-neutral-2 fg-neutral-1 ]" data-extrinsic-sizing="true">
-                    <Image name="ready-bg" descriptorW={[[1440, 2880], [768, 1536], [375, 750]]}/>
-                    <div className="[ wrapper ] [ text-center align-center direction-column//below-lg justify-center//below-lg justify-between//above-lg ]">
+                    <Image name="ready-bg" resolutionW={[[1440, 2880], [768, 1536], [375, 750]]}/>
+                    <div className="[ wrapper ] [ items-justify-center//below-lg items-align-center//above-lg direction-row//above-lg justify-between//above-lg ]">
                         <h2 className="[ title-3 ] [ measure-7 ]">Ready to make a reservation?</h2>
                         <Button to="/reservation" content="book a table" type="ghost"/>
                     </div>

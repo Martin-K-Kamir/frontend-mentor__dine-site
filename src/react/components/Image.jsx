@@ -2,8 +2,8 @@
 export default function Image(props) {
     const imageSizes = props.imageSizes ? [...props.imageSizes] : ["desktop", "tablet", "mobile"]
     const mediaSizes = props.mediaSizes ? [...props.mediaSizes] : ["64em", "30em"];
-    const descriptorX = props.descriptorX ? [...props.descriptorX] : ["1x", "2x"];
-    const descriptorW = props.descriptorW ? [...props.descriptorW] : "";
+    const resolutionX = props.resolutionX ? [...props.resolutionX] : ["1x", "2x"];
+    const resolutionW = props.resolutionW ? [...props.resolutionW] : "";
     const formats = props.formats ? [...props.formats] : ["webp", "jpg"];
 
     function getPath() {
@@ -14,10 +14,10 @@ export default function Image(props) {
         }
     }
 
-    function getSrcSet(deviceSize, x) {
-        return descriptorX.map((descriptor, i) => {
+    function getSrcSet(imageSize, x) {
+        return resolutionX.map((resolution, i) => {
             return formats.map(format => {
-                return `${getPath()}-${deviceSize}${descriptor !== "1x" ? `@${descriptor}` : ""}.${format} ${descriptorW ? descriptorW[x][i] + "w" : descriptor}`;
+                return `${getPath()}-${imageSize}${resolution !== "1x" ? `@${resolution}` : ""}.${format} ${resolutionW ? resolutionW[x][i] + "w" : resolution}`;
             })
         })
     }
@@ -25,11 +25,11 @@ export default function Image(props) {
 
     return (
         <picture className={props.className}>
-            {imageSizes.map((deviceSize, index) => (
+            {imageSizes.map((imageSize, index) => (
                 <source
                     key={`key${index}`}
                     media={mediaSizes[index] ? `(width > ${mediaSizes[index]})` : ""}
-                    srcSet={getSrcSet(deviceSize, index)}
+                    srcSet={getSrcSet(imageSize, index)}
                 />
             ))}
 

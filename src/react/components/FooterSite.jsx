@@ -6,7 +6,7 @@ export default function FooterSite() {
     return (
         <footer className="[ footer-site ] [ bg-neutral-2 fg-neutral-1 ]">
             <div className="[ wrapper ] [ text-center//below-md ] ">
-                <div className="[ align-center//below-md direction-column//below-md ]">
+                <div className="[ items-justify-center//below-md direction-row//above-md ]">
                     <Link to="/" aria-label="homepage"><Logo/></Link>
                     <div className="[ flow ] [ fs-1 text-uppercase letter-spacing-5 margin-center direction-column//below-lg ]">
                         <div className="stack">
@@ -21,7 +21,7 @@ export default function FooterSite() {
                         </div>
                     </div>
                 </div>
-                <div className="align-center//below-md direction-column//below-md justify-between//above-md">
+                <div className="items-justify-center//below-md items-align-center//below-md direction-row//above-md justify-between//above-md">
                     <p className="fs-1">Challenge by <a href="https://www.frontendmentor.io/home">Frontend&nbsp;Mentor</a>.
                         Coded&nbsp;by&nbsp;Martin&nbsp;Kamír.</p>
                     <ul className="cluster" role="list">

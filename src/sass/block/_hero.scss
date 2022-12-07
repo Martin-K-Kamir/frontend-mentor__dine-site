@@ -1,5 +1,6 @@
 
 .hero {
+	display: grid;
 	min-block-size : 50rem;
 
 	@media (width <= $width-md) {
@@ -7,15 +8,16 @@
 	}
 
 	&__container {
-		display        : flex;
-		flex-direction : column;
+
 	}
 
 	&__content {
-		margin-block : auto;
+
 	}
 
 	img {
+		max-block-size : 70rem;
+
 		@media (width <= $width-lg) {
 			object-position : top;
 		}
