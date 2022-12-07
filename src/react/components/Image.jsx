@@ -1,4 +1,3 @@
-// d 1080 540 t 1146 573 m 654 327
 export default function Image(props) {
     const imageSizes = props.imageSizes ? [...props.imageSizes] : ["desktop", "tablet", "mobile"]
     const mediaSizes = props.mediaSizes ? [...props.mediaSizes] : ["64em", "30em"];
