@@ -8,7 +8,7 @@ export default function FooterSite() {
             <div className="[ wrapper ] [ text-center//below-md ] ">
                 <div className="[ items-justify-center//below-md direction-row//above-md ]">
                     <Link to="/" aria-label="homepage"><Logo/></Link>
-                    <div className="[ flow ] [ fs-1 text-uppercase letter-spacing-5 margin-center direction-column//below-lg ]">
+                    <div className="[ flow ] [ fs-1 text-uppercase letter-spacing-5 margin-center direction-row//above-lg ]">
                         <div className="stack">
                             <p>Marthwaite, Sedbergh</p>
                             <p>Cumbria</p>

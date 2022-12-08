@@ -21,13 +21,17 @@ export default function Image(props) {
         })
     }
 
+    function getMedia(i) {
+        if (props.mediaSizes === "none") return false;
+        if (mediaSizes[i]) return `(width > ${mediaSizes[i]})`;
+    }
 
     return (
         <picture className={props.className}>
             {imageSizes.map((imageSize, index) => (
                 <source
                     key={`key${index}`}
-                    media={mediaSizes[index] ? `(width > ${mediaSizes[index]})` : ""}
+                    media={getMedia(index)}
                     srcSet={getSrcSet(imageSize, index)}
                 />
             ))}

@@ -1,0 +1,32 @@
+
+.feature-events {
+
+	&__item {
+		display             : grid;
+		grid-auto-columns   : 1fr;
+
+		grid-template-areas :
+				'image'
+				'nav'
+				'content';
+
+		@media (width >= $width-lg) {
+			grid-template-areas :
+				'image content'
+				'image nav';
+		}
+	}
+
+	&__content {
+		grid-area : content;
+	}
+
+	&__nav {
+		grid-area : nav;
+	}
+
+	:where(img, picture) {
+		grid-area   : image;
+		inline-size : 100%;
+	}
+}

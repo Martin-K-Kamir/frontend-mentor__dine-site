@@ -28,19 +28,19 @@
 			background-color : hsl(var(--_fg));
 		}
 	}
+}
 
-	span {
-	}
+.btn[data-type='ghost'] {
+	--_bg           : transparent;
+	--_border-color : var(--_fg);
+	--outline-color : var(--_fg);
 
-	&[data-type='ghost'] {
-		--_bg           : transparent;
-		--_border-color : var(--_fg);
-		--outline-color : var(--_fg);
-
-		@media (hover : hover) {
-			&:where(:hover, :focus-visible) {
-				color : initial;
-			}
+	@media (hover : hover) {
+		&:where(:hover, :focus-visible) {
+			color : initial;
 		}
 	}
+}
+
+.btn[data-type="text"] {
 }
