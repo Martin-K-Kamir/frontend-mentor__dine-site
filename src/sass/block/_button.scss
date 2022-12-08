@@ -42,5 +42,7 @@
 	}
 }
 
-.btn[data-type="text"] {
+.btn[data-type='text'] {
+	all    : unset;
+	cursor : pointer;
 }

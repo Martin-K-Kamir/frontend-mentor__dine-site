@@ -8,6 +8,7 @@ export default function Hero(props) {
         <header className="[ hero ] [ stacked ] [ bg-neutral-2 fg-neutral-1 ]" data-extrinsic-sizing="true">
             <Image name={props.image.name ? props.image.name : "hero-bg"}
                    dir={props.image.dir}
+                   fetchPriority={"high"}
                    resolutionW={[[1440, 2880], [768, 1536], [375, 750]]}
             />
             <div className=" [ hero__container ] [ wrapper ] [ self-align-end//below-lg items-justify-center//below-lg align-center//below-lg ]">
