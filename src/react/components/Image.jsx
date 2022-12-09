@@ -22,12 +22,17 @@ export default function Image(props) {
     }
 
     function getMedia(i) {
-        if (props.mediaSizes === "none") return false;
+        if (props.mediaSizes === "none") return "false";
         if (mediaSizes[i]) return `(width > ${mediaSizes[i]})`;
     }
 
+    function handleLoad() {
+        if (!props.onLoad) return;
+        props.onLoad();
+    }
+
     return (
-        <picture className={props.className}>
+        <picture onLoad={handleLoad} className={props.className}>
             {imageSizes.map((imageSize, index) => (
                 <source
                     key={`key${index}`}
@@ -40,7 +45,7 @@ export default function Image(props) {
                  fetchpriority={props.fetchPriority ? props.fetchPriority : 'auto'}
                  width={props.width}
                  height={props.height}
-                 aria-hidden={props.alt ? false : true}
+                 aria-hidden={!props.alt}
                  alt={props.alt ? props.alt : ""}
                  src={`${getPath()}-${imageSizes[0]}.jpg`}
             />
