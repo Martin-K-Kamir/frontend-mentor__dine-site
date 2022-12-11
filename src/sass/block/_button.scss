@@ -11,6 +11,7 @@
 	cursor                 : pointer;
 	display                : inline-flex;
 	align-items            : center;
+	justify-content        : center;
 	padding                : 1em 2em 0.9em; // The bottom padding is a bit smaller to account for the font's family baseline. Which makes the content appear more centered.
 	font-size              : var(--fs-3);
 	font-weight            : var(--fw-3);

@@ -5,9 +5,8 @@
 	&__container {
 		display     : flex;
 		align-items : center;
-		gap         : 3rem; // temp
 
-		@media (width < $width-lg) {
+		@media (width <= $width-lg) {
 			@container (width <= 26em) {
 				flex-direction : column;
 			}
@@ -15,7 +14,7 @@
 	}
 
 	&__content {
-		@media (width < $width-lg) {
+		@media (width <= $width-lg) {
 			@container (width <= 26em) {
 				display     : flex;
 				align-items : center;
@@ -27,7 +26,7 @@
 	:where(img, picture) {
 		max-inline-size : 10rem;
 
-		@media (width < $width-lg) {
+		@media (width <= $width-lg) {
 			@container (width <= 26em) {
 				max-inline-size : 100%;
 				width           : 100%;

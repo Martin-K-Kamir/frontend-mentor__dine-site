@@ -1,0 +1,69 @@
+.select {
+	--_space    : var(--space, 0.8em);
+
+	position    : relative;
+	cursor      : pointer;
+	user-select : none;
+	isolation   : isolate;
+	z-index     : 1;
+
+	&__selected {
+		display         : flex;
+		justify-content : space-between;
+		gap             : calc(var(--_space) / 1.5);
+	}
+
+	&__selected::after {
+		content             : url('data:image/svg+xml, %3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'18\' height=\'11\'%3E%3Cpath fill=\'none\' stroke=\'%239E7F66\' stroke-width=\'2\' d=\'M1 1l8 8 8-8\'/%3E%3C/svg%3E');
+		block-size          : 0.8em;
+		transform-origin    : 50% 75% 0;
+		margin-inline-start : auto;
+	}
+
+	&__selected[data-open='true']::after {
+		rotate : 180deg;
+	}
+
+	&__dropdown {
+		position         : absolute;
+		inset            : 120% 0 auto;
+		z-index          : 1;
+		opacity          : 0;
+		background-color : hsl(var(--_bg));
+		visibility       : hidden;
+		transition       : opacity 50ms ease-in-out, visibility 50ms ease-in-out;
+
+		box-shadow       : 1px 1px 10px 0px rgba(0, 0, 0, 0.35); // temp
+	}
+
+	&__dropdown[data-open='true'] {
+		opacity    : 1;
+		visibility : visible;
+	}
+
+	&__option {
+		display     : flex;
+		gap         : calc(var(--_space) / 1.5);
+		padding     : calc(var(--_space) / 2) var(--_space);
+		line-height : var(--line-height-1);
+	}
+
+	&__option:first-child {
+		padding-block-start : var(--_space);
+	}
+
+	&__option:last-child {
+		padding-block-end : var(--_space);
+	}
+
+	&__option::before {
+		content    : url('data:image/svg+xml, %3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'13\' height=\'11\'%3E%3Cpath fill=\'none\' stroke=\'%239E7F66\' stroke-width=\'2\' d=\'M1 5.897l2.767 2.767L11.432 1\'/%3E%3C/svg%3E');
+		opacity    : 0;
+		visibility : hidden;
+	}
+
+	&__option[data-selected='true']::before {
+		opacity    : 1;
+		visibility : visible;
+	}
+}

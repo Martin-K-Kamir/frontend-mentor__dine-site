@@ -13,30 +13,32 @@ export default function HomePage() {
             />
             <section>
                 <div className="wrapper">
-                    <div className="[ zpattern ] [ text-center//below-lg ]">
+                    <div className="[ zpattern ] [ text-center//below-lg ]" data-zpattern-first="media">
                         <div>
-                            <Image name="enjoyable-place" alt="A view of a nice valley where the river flows and sheep can be observed"
-                                   lazy={true}
-                                   resolutionW={[[540, 1080], [573, 1146], [327, 654]]}
-                            />
                             <div className="[ stack ] [ items-align-center//below-lg ]">
                                 <h2 className="title-3">Enjoyable place for all the family</h2>
                                 <p className="measure-4">Our relaxed surroundings make dining with us a great experience for everyone. We can even
                                     arrange a tour of the
-                                    farm before your meal.</p>
+                                    farm before your meal.
+                                </p>
                             </div>
-                        </div>
-                        <div>
-                            <Image name="locally-sourced" alt="Chef finishing plating of Fish with White Asparagus"
+                            <Image name="enjoyable-place" alt="A view of a nice valley where the river flows and sheep can be observed"
                                    lazy={true}
                                    resolutionW={[[540, 1080], [573, 1146], [327, 654]]}
                             />
+                        </div>
+                        <div>
                             <div className="[ stack ] [ items-align-center//below-lg ]">
                                 <h2 className="title-3">The most locally sourced food</h2>
                                 <p className="measure-4">All our ingredients come directly from our farm or local fishery. So you can be sure that
                                     you’re eating the
-                                    freshest, most sustainable food.</p>
+                                    freshest, most sustainable food.
+                                </p>
                             </div>
+                            <Image name="locally-sourced" alt="Chef finishing plating of Fish with White Asparagus"
+                                   lazy={true}
+                                   resolutionW={[[540, 1080], [573, 1146], [327, 654]]}
+                            />
                         </div>
                     </div>
                 </div>
@@ -102,7 +104,7 @@ export default function HomePage() {
                         },
                         {
                             name: "Special Events",
-                            desc: "Whether it’s a romantic dinner or special date you’re celebrating with others we’ll look after you. We’ll be sure to mark your special date with an unforgettable meal.",
+                            desc: "Whether it’s a  romantic dinner or special date you’re celebrating with others we’ll look after you. We’ll be sure to mark your special date with an unforgettable meal.",
                             image: {name: "special-events", alt: "Family sitting at table", lazy: true, resolutionW: [[540, 1080],[573, 1146], [326, 652]]}
                         },
                         {

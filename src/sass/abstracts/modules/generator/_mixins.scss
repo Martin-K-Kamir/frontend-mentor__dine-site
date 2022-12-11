@@ -703,7 +703,7 @@
 					@if $break-at == 'min' or $break-at == 'both' {
 						@for $i from 1 through length($breakpoint-values) {
 							@at-root .#{$key}\/\/#{'above-'}#{nth($breakpoint-keys, $i)} {
-								@media (width >= nth($breakpoint-values, $i)) {
+								@media (width > nth($breakpoint-values, $i)) {
 									#{$utils-property} : $value;
 								}
 							}
@@ -713,7 +713,7 @@
 					@if $break-at == 'max' or $break-at == 'both' {
 						@for $i from 1 through length($breakpoint-values) {
 							@at-root .#{$key}\/\/#{'below-'}#{nth($breakpoint-keys, $i)} {
-								@media (width < nth($breakpoint-values, $i)) {
+								@media (width <= nth($breakpoint-values, $i)) {
 									#{$utils-property} : $value;
 								}
 							}

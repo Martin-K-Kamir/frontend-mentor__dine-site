@@ -1,14 +1,13 @@
 
 .zpattern {
-
 	&__block,
 	& > div {
-		--_space          : var(--space, #{$space});
-		--space           : initial; // Reset the variable to its initial value.
+		--_space    : var(--space, #{$space});
+		--space     : initial; // Reset the variable to its initial value.
 
-		display           : grid;
-		align-items       : center;
-		gap               : var(--_space);
+		display     : grid;
+		align-items : center;
+		gap         : var(--_space);
 
 		@media (width > $width-lg) {
 			grid-auto-columns : 1fr;
@@ -24,7 +23,6 @@
 
 	&__block:nth-child(odd) &__content,
 	& > div:nth-child(odd) > div {
-
 		@media (width > $width-lg) {
 			justify-self : end;
 		}
@@ -34,9 +32,56 @@
 	& > div:nth-child(even) > div {
 
 		@media (width > $width-lg) {
-			order        : -1;
 			justify-self : start;
 		}
 	}
 }
 
+[data-zpattern-first='media'].zpattern {
+
+	&__block &__content,
+	& > div > div {
+		order : 2;
+	}
+
+	&__block:nth-child(even) &__content,
+	& > div:nth-child(even) > div {
+		@media (width > $width-lg) {
+			order : 0;
+		}
+	}
+}
+
+[data-zpattern-first='content'].zpattern {
+	&__block &__content,
+	& > div > div {
+		order : 2;
+
+		@media (width > $width-lg) {
+			order : 0;
+			justify-self : start;
+		}
+	}
+
+	&__block:nth-child(even) &__content,
+	& > div:nth-child(even) > div {
+		@media (width > $width-lg) {
+			order : 2;
+			justify-self : end;
+		}
+	}
+}
+
+[data-zcolumn-first='content'].zpattern {
+	&__block &__content,
+	& > div > div {
+		order : 0;
+	}
+}
+
+[data-zcolumn-first='media'].zpattern {
+	&__block &__content,
+	& > div > div {
+		order : 2;
+	}
+}

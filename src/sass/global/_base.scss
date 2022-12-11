@@ -13,7 +13,7 @@ picture > img {
 	object-fit: inherit;
 }
 
-:where(a, button) {
+:where(a, button, input, select) {
 	text-decoration : none;
 	color           : inherit;
 

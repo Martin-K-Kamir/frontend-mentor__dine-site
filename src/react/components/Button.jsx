@@ -16,11 +16,8 @@ export default function Button(props) {
     function getType() {
         if (!props.type) return;
 
-        return {
-            'data-type': props.type
-        };
+        return {'data-type': props.type};
     }
-    const type = getType();
 
     function handleClick() {
         if (!props.onClick) return
@@ -28,12 +25,20 @@ export default function Button(props) {
         props.onClick();
     }
 
+    function handleKeyDown(e) {
+        if (e.key === 'Enter') {
+            handleClick();
+        }
+    }
+
     return (
         <Tag href={props.href}
              to={props.to}
              className={`btn`}
              onClick={handleClick}
-             {...type}
+             onKeyDown={e => handleKeyDown(e)}
+             {...getType()}
+             {...props.attributes}
         >
             {props.content}
         </Tag>

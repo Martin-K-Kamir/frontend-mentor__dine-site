@@ -1,0 +1,111 @@
+.form {
+	--_bg : var(--bg, var(--clr-neutral-1));
+	--clr-valid     : 134, 61%, 41%;
+	--clr-error     : 0, 80%, 55%;
+	--clr-warn      : 30, 100%, 51%;
+
+	background-color: hsl(var(--_bg));
+
+	max-inline-size : 540px;
+	padding         : 48px;
+
+	border          : 3px solid red;
+
+
+	&__group {
+		position : relative;
+
+		@media (width > $width-md) {
+			display : flex;
+		}
+	}
+
+	&__group > div {
+		@media (width > $width-md) {
+			inline-size : 100%;
+		}
+	}
+
+	&__group:has(:invalid:not(:placeholder-shown)) {
+		--fg-label : var(--clr-warn);
+	}
+
+	:is(&__group:has(:invalid:not(:placeholder-shown):not(:focus)),
+	&__group[data-error='true']) :where(label, input:invalid) {
+		--fg : var(--clr-error);
+	}
+
+	//&__group:has(:valid:not(:placeholder-shown)):not([data-error='true']) {
+	//	--fg : Var(--clr-valid);
+	//}
+
+	:where(label, select, .select, .counter, input, input::placeholder) {
+		--_fs       : var(--fs, var(--fs-4));
+		--_fw       : var(--fw, var(--fw-2));
+
+		opacity     : var(--_opacity);
+		font-size   : var(--_fs);
+		font-weight : var(--_fw);
+	}
+
+	label {
+		--_fg       : var(--fg, var(--fg-label, var(--clr-neutral-2)));
+
+		flex-shrink : 0;
+		opacity     : var(--_opacity);
+		color       : hsl(var(--_fg));
+	}
+
+	label[data-type='popsout'] {
+		--_fs      : var(--fs-1);
+		--_opacity : 0;
+
+		padding    : 0 0 0 0.7em;
+		position   : absolute;
+		transition : transform 50ms ease-in-out, --opacity 50ms ease-in-out;
+		transform  : translateY(0);
+	}
+
+	.form__group:has(input:not(:placeholder-shown)) label[data-type='popsout'] {
+		--_opacity : 1;
+		transform  : translateY(-80%);
+	}
+
+	:where(input, select, .select, .counter) {
+		--_fg            : var(--fg, var(--fg-input, var(--clr-neutral-2)));
+		--_opacity       : 1;
+
+		appearance       : none;
+		inline-size      : 100%;
+		padding          : 0 0.5em .15em;
+		color            : hsl(var(--_fg));
+		opacity          : var(--_opacity);
+		outline          : none;
+		border           : none;
+		border-radius    : 0 !important;
+		border-block-end : 0.01em solid hsl(var(--_fg), var(--_opacity));
+	}
+
+	input[type='number']::-webkit-inner-spin-button,
+	input[type='number']::-webkit-outer-spin-button {
+		appearance : none;
+	}
+
+	input:placeholder-shown {
+		--_opacity : 0.45;
+	}
+
+	.counter {
+		--_fw : var(--fw-3);
+	}
+
+	.btn {
+		inline-size     : 100%;
+	}
+
+	&:not(:valid) .btn {
+		opacity        : 0.5;
+		pointer-events : none;
+	}
+
+}

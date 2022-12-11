@@ -1,20 +1,18 @@
 
 .feature-events {
-
 	&__item {
+		animation           : fade-in 150ms ease-in-out;
 		display             : grid;
 		grid-auto-columns   : 1fr;
-		animation: fade-in 150ms ease-in-out;
-
 		grid-template-areas :
 				'image'
-				'nav'
+				'tabs'
 				'content';
 
-		@media (width >= $width-lg) {
+		@media (width > $width-lg) {
 			grid-template-areas :
 				'image content'
-				'image nav';
+				'image tabs';
 		}
 
 		@keyframes fade-in {
@@ -31,8 +29,17 @@
 		grid-area : content;
 	}
 
-	&__nav {
-		grid-area : nav;
+	&__tabs {
+		grid-area : tabs;
+	}
+
+	p {
+		@media (width > $width-lg) {
+			display: -webkit-box;
+			-webkit-line-clamp: 6;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
 	}
 
 	:where(img, picture) {

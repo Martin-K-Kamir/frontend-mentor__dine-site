@@ -10,9 +10,9 @@ export default function FooterSite() {
                     <Link to="/" aria-label="homepage"><Logo/></Link>
                     <div className="[ flow ] [ fs-1 text-uppercase letter-spacing-5 margin-center direction-row//above-lg ]">
                         <div className="stack">
-                            <p>Marthwaite, Sedbergh</p>
+                            <p aria-label="restaurant address">Marthwaite, Sedbergh</p>
                             <p>Cumbria</p>
-                            <a href="tel:+00 44 123 4567">+00 44 123 4567</a>
+                            <a aria-label="phone number" href="tel:+00 44 123 4567">+00 44 123 4567</a>
                         </div>
                         <div className="stack">
                             <p>open times</p>
