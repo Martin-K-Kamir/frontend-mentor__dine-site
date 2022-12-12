@@ -5,8 +5,16 @@ import {useState} from "react";
 
 export default function ReservationForm() {
     const now = new Date();
-    const lastDayOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
     const currentYear = now.getFullYear();
+    const currentMonth = now.getMonth() + 1;
+    const currentDay = now.getDate();
+    // const currentHour = now.getHours() % 12 || 12;
+    const currentHour = now.getHours() % 12 || 12;
+    const currentMinute = now.getMinutes();
+    const lastDayOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+
+    const timeFormats = ["AM", "PM"];
+    const [timeFormat, setTimeFormat] = useState(timeFormats[0]);
 
     const nameObj = {
         key: "Name",
@@ -62,17 +70,17 @@ export default function ReservationForm() {
         maxValue: 60,
     });
 
-    function handl() {
-
-
-    }
-
-    if (monthObj.value && dayObj.value && yearObj.value) {
-        const date = new Date(`${monthObj.value}/${dayObj.value}/${yearObj.value}`);
-        if (date < now) {
-            console.log("Date is in the past");
+    function validateDate() {
+        const timestamp = Date.now();
+        const setTimestamp = new Date(yearObj.value, monthObj.value - 1, dayObj.value, timeFormat === "AM" ? hourObj.value : Number(hourObj.value) + 12, minsObj.value).valueOf();
+        if (setTimestamp < timestamp) {
+            console.log("Invalid date");
+        } else if (setTimestamp < timestamp + 3600000) {
+            console.log("Invalid time");
         }
     }
+    validateDate()
+
 
     return (
         <form action="#" id="reservationForm" className="form" name="reservationForm">
@@ -171,7 +179,7 @@ export default function ReservationForm() {
                                title="Enter valid minutes"
                                required={true}
                         />
-                        <Select name="amPm" options={["AM", "PM"]}/>
+                        <Select name="amPm" selectedOption={setTimeFormat} options={timeFormats}/>
                     </div>
                 </div>
                 <div className="form__group">
@@ -181,7 +189,6 @@ export default function ReservationForm() {
                     <Button to="/reservation" content="book a table"/>
                 </div>
             </div>
-
         </form>
     );
 }

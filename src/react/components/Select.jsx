@@ -12,6 +12,7 @@ export default function Select(props) {
 
     function handleOptionClick(option) {
         setSelected(option);
+        props.selectedOption(option);
     }
 
     document.addEventListener("click", function (e) {
