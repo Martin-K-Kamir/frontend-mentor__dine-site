@@ -30,6 +30,11 @@
 		--fg-label : var(--clr-warn);
 	}
 
+	&__info {
+		color : hsl(var(--fg));
+	}
+
+	[data-error='true'],
 	:is(&__group:has(:invalid:not(:placeholder-shown):not(:focus)),
 	&__group[data-error='true']) :where(label, input:invalid) {
 		--fg : var(--clr-error);

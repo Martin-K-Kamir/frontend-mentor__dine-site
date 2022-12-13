@@ -1,20 +1,15 @@
 import Button from "./Button.jsx";
 import Select from "./Select";
 import Counter from "./PersonCounter";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 export default function ReservationForm() {
     const now = new Date();
     const currentYear = now.getFullYear();
-    const currentMonth = now.getMonth() + 1;
-    const currentDay = now.getDate();
-    // const currentHour = now.getHours() % 12 || 12;
-    const currentHour = now.getHours() % 12 || 12;
-    const currentMinute = now.getMinutes();
     const lastDayOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
-
     const timeFormats = ["AM", "PM"];
     const [timeFormat, setTimeFormat] = useState(timeFormats[0]);
+    const [error, setError] = useState("");
 
     const nameObj = {
         key: "Name",
@@ -71,16 +66,56 @@ export default function ReservationForm() {
     });
 
     function validateDate() {
-        const timestamp = Date.now();
+        if (!(monthObj.value && dayObj.value && yearObj.value && hourObj.value && minsObj.value)) return;
+        const limit = 3600000 * 4;
+        const currentTimestamp = Date.now();
         const setTimestamp = new Date(yearObj.value, monthObj.value - 1, dayObj.value, timeFormat === "AM" ? hourObj.value : Number(hourObj.value) + 12, minsObj.value).valueOf();
-        if (setTimestamp < timestamp) {
-            console.log("Invalid date");
-        } else if (setTimestamp < timestamp + 3600000) {
-            console.log("Invalid time");
+        if (setTimestamp < currentTimestamp) {
+            setError('Selected date is in the past');
+        } else if (setTimestamp < currentTimestamp + limit) {
+            setError('Reservation must be at least 4 hours in advance');
+        } else {
+            setError('');
         }
     }
-    validateDate()
 
+    function isWeekend(date = new Date()) {
+        return date.getDay() === 6 || date.getDay() === 0;
+    }
+
+    function checkOpenTime(openHour, openMins, closeHour, closeMins) {
+        const unformattedHour = timeFormat === "AM" ? hourObj.value : Number(hourObj.value) + 12;
+        if (unformattedHour < openHour || (unformattedHour === openHour && minsObj.value < openMins)) {
+            setError(`Restaurant opens at ${openHour}:${closeMins === 0 ? "00" : closeMins} AM`);
+        } else if (unformattedHour === closeHour -1 && minsObj.value >= closeMins) {
+            setError(`Last reservation is at ${closeHour - 12 - 1}:${closeMins === 0 ? "00" : closeMins} PM`);
+        } else if (unformattedHour >= closeHour || (unformattedHour === closeHour && minsObj.value > closeMins)) {
+            setError(`Restaurant closes at ${closeHour - 12}:${closeMins === 0 ? "00" : closeMins} PM`);
+        } else {
+            setError('');
+        }
+    }
+
+    function validateOpenTime() {
+        if (!(hourObj.value && minsObj.value)) return;
+        const openHour = 9;
+        const openMins = 0;
+        const closeHour = 22;
+        const closeMins = 0;
+        const closeHourWeekend = 23;
+        const closeMinsWeekend = 30;
+
+        if (isWeekend(now)) {
+            checkOpenTime(openHour, openMins, closeHourWeekend, closeMinsWeekend);
+        } else {
+            checkOpenTime(openHour, openMins, closeHour, closeMins);
+        }
+    }
+
+    useEffect(() => {
+        // validateDate();
+        validateOpenTime();
+    });
 
     return (
         <form action="#" id="reservationForm" className="form" name="reservationForm">
@@ -167,6 +202,7 @@ export default function ReservationForm() {
                                value={hourObj.value}
                                title="Enter valid hour"
                                required={true}
+                               data-error={error}
                         />
                         <input type="number"
                                id={minsObj.key}
@@ -178,6 +214,7 @@ export default function ReservationForm() {
                                value={minsObj.value}
                                title="Enter valid minutes"
                                required={true}
+                               data-error={error}
                         />
                         <Select name="amPm" selectedOption={setTimeFormat} options={timeFormats}/>
                     </div>
@@ -185,9 +222,8 @@ export default function ReservationForm() {
                 <div className="form__group">
                     <Counter start={4} min={1} max={45} content="people"/>
                 </div>
-                <div className="div">
-                    <Button to="/reservation" content="book a table"/>
-                </div>
+                <Button to="/reservation" content="book a table"/>
+                {error && <p className="[ form__info ] [ text-center ]" data-error={!(error === "true")}>{error}</p>}
             </div>
         </form>
     );
