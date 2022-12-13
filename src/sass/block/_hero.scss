@@ -1,6 +1,6 @@
 
 .hero {
-	display: grid;
+	display        : grid;
 	min-block-size : 50rem;
 
 	@media (width <= $width-md) {
@@ -8,7 +8,6 @@
 	}
 
 	&__container {
-
 	}
 
 	&__content {
@@ -21,5 +20,25 @@
 		@media (width <= $width-lg) {
 			object-position : top;
 		}
+	}
+}
+
+.hero:has(.form) {
+
+	:where(.hero__container, img) {
+		max-block-size : 37.5rem;
+	}
+
+	picture {
+		position : relative;
+	}
+
+	picture::after {
+		content          : '';
+		position         : absolute;
+		inset            : 0;
+		z-index          : -1;
+		background-color : hsl(var(--clr-neutral-2));
+		max-block-size   : 37.5rem;
 	}
 }

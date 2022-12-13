@@ -10,6 +10,8 @@ export default function ReservationForm() {
     const timeFormats = ["AM", "PM"];
     const [timeFormat, setTimeFormat] = useState(timeFormats[0]);
     const [error, setError] = useState("");
+    const [dateValid, setDateValid] = useState(false);
+    const [timeValid, setTimeValid] = useState(false);
 
     const nameObj = {
         key: "Name",
@@ -72,10 +74,12 @@ export default function ReservationForm() {
         const setTimestamp = new Date(yearObj.value, monthObj.value - 1, dayObj.value, timeFormat === "AM" ? hourObj.value : Number(hourObj.value) + 12, minsObj.value).valueOf();
         if (setTimestamp < currentTimestamp) {
             setError('Selected date is in the past');
+            setDateValid(false);
         } else if (setTimestamp < currentTimestamp + limit) {
             setError('Reservation must be at least 4 hours in advance');
+            setDateValid(false);
         } else {
-            setError('');
+            setDateValid(true);
         }
     }
 
@@ -83,16 +87,23 @@ export default function ReservationForm() {
         return date.getDay() === 6 || date.getDay() === 0;
     }
 
+    function formatMins(mins) {
+        return mins < 10 ? `0${mins}` : mins;
+    }
+
     function checkOpenTime(openHour, openMins, closeHour, closeMins) {
         const unformattedHour = timeFormat === "AM" ? hourObj.value : Number(hourObj.value) + 12;
         if (unformattedHour < openHour || (unformattedHour === openHour && minsObj.value < openMins)) {
-            setError(`Restaurant opens at ${openHour}:${closeMins === 0 ? "00" : closeMins} AM`);
+            setError(`Restaurant opens at ${openHour}:${formatMins(openMins)} AM`);
+            setTimeValid(false);
         } else if (unformattedHour === closeHour -1 && minsObj.value >= closeMins) {
-            setError(`Last reservation is at ${closeHour - 12 - 1}:${closeMins === 0 ? "00" : closeMins} PM`);
+            setError(`Last reservation is at ${closeHour - 12 - 1}:${formatMins(openMins)} PM`);
+            setTimeValid(false);
         } else if (unformattedHour >= closeHour || (unformattedHour === closeHour && minsObj.value > closeMins)) {
-            setError(`Restaurant closes at ${closeHour - 12}:${closeMins === 0 ? "00" : closeMins} PM`);
+            setError(`Restaurant closes at ${closeHour - 12}:${formatMins(openMins)} PM`);
+            setTimeValid(false);
         } else {
-            setError('');
+            setTimeValid(true);
         }
     }
 
@@ -113,13 +124,19 @@ export default function ReservationForm() {
     }
 
     useEffect(() => {
-        // validateDate();
-        validateOpenTime();
+        validateDate();
+        if (dateValid) validateOpenTime();
+        if (dateValid && timeValid) setError("");
     });
+
+    function handleSubmit() {
+        if (!dateValid || !timeValid) return;
+        alert(`We have received your reservation for ${monthObj.value}/${dayObj.value}/${yearObj.value} at ${hourObj.value}:${formatMins(minsObj.value)} ${timeFormat}`);
+    }
 
     return (
         <form action="#" id="reservationForm" className="form" name="reservationForm">
-            <div className="stack">
+            <div className="[ form__container ] [ stack ]">
                 <div className="form__group">
                     <label htmlFor={nameObj.key} data-type="popsout">{nameObj.key}</label>
                     <input type="text"
@@ -152,7 +169,7 @@ export default function ReservationForm() {
                            autoCorrect="off"
                     />
                 </div>
-                <div className="[ form__group ] [ flow ]">
+                <div className="form__group">
                     <label htmlFor={monthObj.key}>Pick a date</label>
                     <div className="[ even-columns ] [ flow ]">
                         <input type="number"
@@ -189,7 +206,7 @@ export default function ReservationForm() {
                                required={true}/>
                     </div>
                 </div>
-                <div className="[ form__group ] [ flow ] ">
+                <div className="form__group">
                     <label htmlFor={hourObj.key}>Pick a time</label>
                     <div className="[ even-columns ] [ flow ]">
                         <input type="number"
@@ -202,7 +219,6 @@ export default function ReservationForm() {
                                value={hourObj.value}
                                title="Enter valid hour"
                                required={true}
-                               data-error={error}
                         />
                         <input type="number"
                                id={minsObj.key}
@@ -214,7 +230,6 @@ export default function ReservationForm() {
                                value={minsObj.value}
                                title="Enter valid minutes"
                                required={true}
-                               data-error={error}
                         />
                         <Select name="amPm" selectedOption={setTimeFormat} options={timeFormats}/>
                     </div>
@@ -222,8 +237,8 @@ export default function ReservationForm() {
                 <div className="form__group">
                     <Counter start={4} min={1} max={45} content="people"/>
                 </div>
-                <Button to="/reservation" content="book a table"/>
-                {error && <p className="[ form__info ] [ text-center ]" data-error={!(error === "true")}>{error}</p>}
+                <Button onClick={handleSubmit} content="book a table"/>
+                {error && <p className="[ form__info ] [ text-center fw-3 ]" data-error={!(error === "true")}>{error}</p>}
             </div>
         </form>
     );

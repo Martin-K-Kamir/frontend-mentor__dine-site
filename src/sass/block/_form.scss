@@ -1,15 +1,21 @@
+
 .form {
-	--_bg : var(--bg, var(--clr-neutral-1));
-	--clr-valid     : 134, 61%, 41%;
-	--clr-error     : 0, 80%, 55%;
-	--clr-warn      : 30, 100%, 51%;
+	--_bg            : var(--bg, var(--clr-neutral-1));
+	--clr-valid      : 134, 61%, 41%;
+	--clr-error      : 0, 80%, 55%;
+	--clr-warn       : 30, 100%, 51%;
 
-	background-color: hsl(var(--_bg));
+	background-color : hsl(var(--_bg));
 
-	max-inline-size : 540px;
-	padding         : 48px;
 
-	border          : 3px solid red;
+	padding          : 48px; // temp
+	z-index          : 2923; // temp
+
+	container-type : inline-size;
+
+	&__container {
+		width : 100cqw;
+	}
 
 
 	&__group {
@@ -91,6 +97,9 @@
 		border-block-end : 0.01em solid hsl(var(--_fg), var(--_opacity));
 	}
 
+	input[type="number"] {
+	}
+
 	input[type='number']::-webkit-inner-spin-button,
 	input[type='number']::-webkit-outer-spin-button {
 		appearance : none;
@@ -105,9 +114,10 @@
 	}
 
 	.btn {
-		inline-size     : 100%;
+		inline-size : 100%;
 	}
 
+	&:has([data-error='true']) .btn,
 	&:not(:valid) .btn {
 		opacity        : 0.5;
 		pointer-events : none;
