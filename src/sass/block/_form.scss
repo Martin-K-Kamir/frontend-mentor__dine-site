@@ -4,23 +4,11 @@
 	--clr-valid      : 134, 61%, 41%;
 	--clr-error      : 0, 80%, 55%;
 	--clr-warn       : 30, 100%, 51%;
-
 	background-color : hsl(var(--_bg));
-
-
-	padding          : 48px; // temp
-	z-index          : 2923; // temp
-
-	container-type : inline-size;
-
-	&__container {
-		width : 100cqw;
-	}
-
 
 	&__group {
 		position : relative;
-
+		width : 100%;
 		@media (width > $width-md) {
 			display : flex;
 		}
@@ -97,7 +85,8 @@
 		border-block-end : 0.01em solid hsl(var(--_fg), var(--_opacity));
 	}
 
-	input[type="number"] {
+	:where(input[type='number'], .select) {
+		min-width : 5ch;
 	}
 
 	input[type='number']::-webkit-inner-spin-button,

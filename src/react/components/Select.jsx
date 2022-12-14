@@ -24,7 +24,7 @@ export default function Select(props) {
     return (
         <div className="select" onClick={e => handleDropdownClick(e)}>
             <select className="sr-only" name={props.name}>
-                {props.options.map((option, index) => <option key={`key${index}`} value={option}>{option}</option>)}
+                {props.options.map((option, index) => <option key={`key${index}`} value={option} aria-selected={selected === option}>{option}</option>)}
             </select>
             <div aria-hidden={true}>
                 <div className="select__selected" data-open={dropdownActive}>
