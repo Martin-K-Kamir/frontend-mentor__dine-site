@@ -24,3 +24,19 @@
 @import 'composition/zpattern';
 
 @import 'utilities';
+
+.boxes {
+	margin-top : 5rem;
+}
+
+.box {
+	inline-size: var(--space);
+	aspect-ratio: 1;
+	background-color: crimson;
+}
+
+.box2 {
+	inline-size: var(--space);
+	aspect-ratio: 1;
+	background-color: royalblue;
+}
