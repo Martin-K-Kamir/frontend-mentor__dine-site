@@ -120,7 +120,7 @@ export default function HomePage() {
             <section className="[ stacked ] [ bg-neutral-2 fg-neutral-1 ]" data-extrinsic-sizing="true">
                 <Image name="ready-bg" lazy={true} resolutionW={[[1440, 2880], [768, 1536], [375, 750]]}/>
                 <div
-                    className="[ wrapper ] [ text-center//below-lg items-justify-center//below-lg items-align-center//above-lg direction-row//above-lg justify-between//above-lg ]">
+                    className="[ wrapper flow ] [ space-5 text-center//below-lg items-justify-center//below-lg items-align-center//above-lg direction-row//above-lg justify-between//above-lg ]">
                     <h2 className="[ title-3 ] [ measure-7 ]">Ready to make a reservation?</h2>
                     <Button to="/reservation" content="book a table" type="ghost"/>
                 </div>

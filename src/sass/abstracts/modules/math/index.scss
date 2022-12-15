@@ -177,7 +177,7 @@
 /// @return {number} - Clamp function.
  */
 $clamped-min-width : 23.4375em !default;
-$clamped-max-width : 48em !default;
+$clamped-max-width : 64em !default;
 @function clamped($min-value, $max-value, $min-width : $clamped-min-width, $max-width : $clamped-max-width) {
 	$value-unit : null;
 	$width-unit : null;

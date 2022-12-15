@@ -8,6 +8,12 @@ body {
 	background-color : hsl(var(--clr-neutral-1));
 }
 
+:where(section, footer) {
+	--_space : var(--space, var(--space-fluid-4));
+
+	padding-block: var(--_space);
+}
+
 picture > img {
 	inline-size : inherit;
 	object-fit: inherit;
