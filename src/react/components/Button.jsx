@@ -34,7 +34,7 @@ export default function Button(props) {
     return (
         <Tag href={props.href}
              to={props.to}
-             className={`btn`}
+             className={props.utils ? `btn ${props.utils}` : 'btn'}
              onClick={handleClick}
              onKeyDown={e => handleKeyDown(e)}
              {...getType()}

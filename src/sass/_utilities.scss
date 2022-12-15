@@ -32,7 +32,7 @@
 		// 80 / 80 / 80 - 1x - static - footer block padding
 			'space-types' : (
 					'base' : 0.8rem,
-					'ratio' : 'minor-third',
+					'ratio' : 1.200,
 					'length' : 10,
 			),
 		// 48 / - / 32 - 1x - fluid - footer padding
@@ -84,7 +84,7 @@
 	text-transform : uppercase;
 }
 
-.sr-only {
+.sr-only {;
 	position    : absolute;
 	overflow    : hidden;
 	margin      : -1px;
@@ -101,10 +101,3 @@
 // 0 / 230 / 137 - custom
 // 216 / - / 152 - 1x - fluid - hero padding-bottom (maybe custom)
 // 374 / - / 232 - 1x - fluid - hero padding-top (maybe custom)
-
-
-
-
-
-
-

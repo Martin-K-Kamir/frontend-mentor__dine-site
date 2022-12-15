@@ -1,17 +1,27 @@
+@use '../abstracts/modules/math';
 
 .hero {
 	display        : grid;
-	min-block-size : 50rem;
+	min-block-size : 100vh;
 
-	@media (width <= $width-md) {
-		min-block-size : 100vh;
+	@media (width > $width-md) {
+		min-block-size : 60rem;
 	}
 
+	@media (width > $width-lg) {
+		min-block-size : 50rem;
+	}
+
+
 	&__container {
+		padding-block : var(--space-9);
+
+		@media (width <= $width-lg) {
+			padding-block-start: math.clamped(12.5rem, 25.5rem);
+		}
 	}
 
 	&__content {
-
 	}
 
 	img {
