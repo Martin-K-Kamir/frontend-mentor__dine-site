@@ -3,7 +3,15 @@
 	flex-direction  : column;
 	justify-content : start;
 
-	--space         : initial; // Reset the variable to its initial value.
+	&[data-inherit-space='true'],
+	& [data-inherit-space='true'] {
+		--space : inherit;
+	}
+
+	&[data-inherit-space='false'],
+	& [data-inherit-space='false'] {
+		--space : initial;
+	}
 
 	& > * {
 		margin-block : 0;

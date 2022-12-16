@@ -1,5 +1,26 @@
+:where(.flow) {
+	display : grid;
+}
+
 .flow {
 	--_space : var(--space, #{$space});
 	gap      : var(--_space);
-	--space  : initial; // Reset the variable to its initial value.
+
+	&[data-inherit-space='true'],
+	& [data-inherit-space='true'] {
+		--space : inherit;
+	}
+
+	&[data-inherit-space='false'],
+	& [data-inherit-space='false'] {
+		--space : initial;
+	}
+}
+
+[data-flow-childs='divs'].flow {
+	:where(&) :where(div) {
+		display : grid;
+		--_space : var(--space, #{$space});
+		gap      : var(--_space);
+	}
 }
