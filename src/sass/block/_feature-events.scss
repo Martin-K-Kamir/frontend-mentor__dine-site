@@ -1,6 +1,7 @@
 
 .feature-events {
 	&__item {
+		--space             : var(--space-fluid-1);
 		animation           : fade-in 150ms ease-in-out;
 		display             : grid;
 		grid-auto-columns   : 1fr;
@@ -10,6 +11,8 @@
 				'content';
 
 		@media (width > $width-lg) {
+			--space             : var(--space-fluid-4);
+
 			grid-template-areas :
 				'image content'
 				'image tabs';
@@ -27,6 +30,10 @@
 
 	&__content {
 		grid-area : content;
+
+		@media (width > $width-lg) {
+			margin-block : auto;
+		}
 	}
 
 	&__tabs {
@@ -35,15 +42,27 @@
 
 	p {
 		@media (width > $width-lg) {
-			display: -webkit-box;
-			-webkit-line-clamp: 6;
-			-webkit-box-orient: vertical;
-			overflow: hidden;
+			display            : -webkit-box;
+			-webkit-line-clamp : 6;
+			-webkit-box-orient : vertical;
+			overflow           : hidden;
 		}
 	}
 
 	:where(img, picture) {
 		grid-area   : image;
+		object-fit  : cover;
 		inline-size : 100%;
+		block-size  : 100%;
+	}
+
+	&:has(.line-pointer) :where(img, picture) {
+		z-index : 1;
+	}
+
+	.line-pointer::before {
+		@media (width <= $width-lg) {
+			display : none;
+		}
 	}
 }

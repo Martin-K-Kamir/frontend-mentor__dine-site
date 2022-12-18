@@ -26,13 +26,19 @@ export default function Image(props) {
         if (mediaSizes[i]) return `(width > ${mediaSizes[i]})`;
     }
 
+    function getUtils() {
+        if (!props.utils) return "false";
+        return props.utils;
+    }
+
     function handleLoad() {
         if (!props.onLoad) return;
         props.onLoad();
     }
 
     return (
-        <picture onLoad={handleLoad} className={props.className}>
+        <picture onLoad={handleLoad} className={props.className}
+                 className={getUtils()}>
             {imageSizes.map((imageSize, index) => (
                 <source
                     key={`key${index}`}

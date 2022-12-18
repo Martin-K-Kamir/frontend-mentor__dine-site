@@ -9,14 +9,66 @@ body {
 }
 
 :where(section, footer) {
-	--_space : var(--space, var(--space-fluid-4));
+	--_space      : var(--space, var(--space-fluid-4));
+	padding-block : var(--_space);
+	--space       : initial;
+}
 
-	padding-block: var(--_space);
+section {
+
+	&[data-section-overlaps='true'],
+	&[data-section-overlaps='true'] + section > div {
+		--_overlap-ratio : 1;
+		--_overlap       : var(--_space) / var(--_overlap-ratio);
+
+		@media (width > $width-md) {
+			--_overlap-ratio : 1.3;
+		}
+
+		@media (width > $width-lg) {
+			--_overlap-ratio : 1.8;
+		}
+	}
+
+	&[data-section-overlaps='true'] {
+		position            : relative;
+		z-index             : 1;
+		margin-block-start  : calc(-1 * var(--_overlap));
+		margin-block-end    : 0;
+		padding-block-start : 0;
+
+		@media (width > $width-lg) {
+			margin-block-end  : calc(-1 * var(--_overlap));
+			padding-block-end : 0;
+		}
+	}
+
+	&[data-section-overlaps='true'] + section > div {
+		@media (width > $width-lg) {
+			margin-block-start : calc(var(--_overlap));
+		}
+	}
+
+	&[data-section-overlaps='true'][data-reduce-overlaps='true'] div:not(:has(:only-child)):has(div:nth-child(2)) {
+
+		> div:first-of-type div {
+			@media (width > $width-lg) {
+				margin-block-start : calc(var(--_overlap));
+			}
+		}
+
+		> div:last-of-type div {
+			@media (width > $width-lg) {
+				margin-block-end : calc(var(--_overlap));
+
+			}
+		}
+	}
 }
 
 picture > img {
 	inline-size : inherit;
-	object-fit: inherit;
+	object-fit  : inherit;
 }
 
 :where(a, button, input, select) {

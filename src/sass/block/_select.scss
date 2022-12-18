@@ -1,6 +1,6 @@
 .select {
-	--_space    : var(--space, 0.8em);
-
+	--_space    : 0.8em;
+	
 	position    : relative;
 	cursor      : pointer;
 	user-select : none;
@@ -26,7 +26,8 @@
 
 	&__dropdown {
 		position         : absolute;
-		inset            : 120% 0 auto;
+		inset            : 120% 0 - 0.8em auto auto;
+		min-inline-size  : 7.5ch;
 		z-index          : 1;
 		opacity          : 0;
 		background-color : hsl(var(--_bg));
@@ -34,6 +35,10 @@
 		transition       : opacity 50ms ease-in-out, visibility 50ms ease-in-out;
 
 		box-shadow       : 1px 1px 10px 0px rgba(0, 0, 0, 0.35); // temp
+
+		@media (width > $width-xs) {
+			inset            : 120% 0 auto;
+		}
 	}
 
 	&__dropdown[data-open='true'] {

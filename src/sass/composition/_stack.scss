@@ -3,14 +3,10 @@
 	flex-direction  : column;
 	justify-content : start;
 
-	&[data-inherit-space='true'],
+	--space         : initial;
+
 	& [data-inherit-space='true'] {
 		--space : inherit;
-	}
-
-	&[data-inherit-space='false'],
-	& [data-inherit-space='false'] {
-		--space : initial;
 	}
 
 	& > * {

@@ -3,7 +3,6 @@
 .hero {
 	display        : grid;
 	min-block-size : 100vh;
-
 	@media (width > $width-md) {
 		min-block-size : 65rem;
 	}
@@ -12,15 +11,12 @@
 		min-block-size : 50rem;
 	}
 
-	&__container {
+	&__content {
 		padding-block : var(--space-9);
 
 		@media (width <= $width-lg) {
 			padding-block-start : math.clamped(11rem, 23rem);
 		}
-	}
-
-	&__content {
 	}
 
 	img {
@@ -33,9 +29,18 @@
 }
 
 .hero:has(.form) {
+	box-sizing        : content-box;
+	padding-block-end : var(--space-fluid-4);
 
-	:where(.hero__container, img) {
+	:where(.hero__content, img) {
 		max-block-size : 37.5rem;
+	}
+
+	.hero__content {
+		@media (width <= $width-lg) {
+			padding-block-start : var(--space-fluid-7);
+			padding-block-end   : 0;
+		}
 	}
 
 	picture {

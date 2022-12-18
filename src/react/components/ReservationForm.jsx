@@ -135,8 +135,8 @@ export default function ReservationForm() {
     }
 
     return (
-        <form action="#" id="reservationForm" className="form" name="reservationForm">
-            <div className="[ form__container ] [ stack ]">
+        <form action="#" id="reservationForm" className="form" name="reservationForm" data-type="box">
+            <div className="[ form__container ] [ stack ] [ space-5 ]">
                 <div className="form__group">
                     <label htmlFor={nameObj.key} data-type="popsout">{nameObj.key}</label>
                     <input type="text"
@@ -171,7 +171,7 @@ export default function ReservationForm() {
                 </div>
                 <div className="form__group">
                     <label htmlFor={monthObj.key}>Pick a date</label>
-                    <div className="[ even-columns ] [ flow ]">
+                    <div className="[ even-columns ] [ flow ] [ space-3 ]">
                         <input type="number"
                                id={monthObj.key}
                                name={monthObj.key}
@@ -208,7 +208,7 @@ export default function ReservationForm() {
                 </div>
                 <div className="form__group">
                     <label htmlFor={hourObj.key}>Pick a time</label>
-                    <div className="[ even-columns ] [ flow ]">
+                    <div className="[ even-columns ] [ flow ] [ space-3 ]">
                         <input type="number"
                                id={hourObj.key}
                                name={hourObj.key}

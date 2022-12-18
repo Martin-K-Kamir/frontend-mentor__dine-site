@@ -38,20 +38,20 @@ export default function FeatureEvents(props) {
 
     return (
         <div className="feature-events" style={{...getHeight()}}>
-            <div className="[ feature-events__container ] [ stack ]" ref={ref}>
+            <div className="[ feature-events__container ] [ stack ] [ pattern-lines ]" data-pattern-lines-layer="infront" ref={ref}>
                 {props.data.map((event, index) => {
                     if (index === active) {
                         return (
                             <div className="[ feature-events__item ] [ flow ]" key={`key${index}`} id={`event-${index + 1}`} role="tabpanel"
                                  tabIndex="0" aria-labelledby={`tab-${index + 1}`}>
                                 <div
-                                    className="[ flow ] [ direction-column//below-md direction-row//below-lg items-justify-center//below-lg align-start//above-lg ]"
+                                    className="[ flow ] [ space-4 direction-column//below-md direction-row//below-lg items-justify-center//below-lg align-start//above-lg ]"
                                     role="tablist"
                                     aria-label="Tabs for special events"
                                 >
                                     {props.data.map((event, index) => {
                                         return (
-                                            <span className="[ title-1 ] [ text-uppercase ]" key={`key${index}`}>
+                                            <span className="[ title-1 ] [ fs-fluid-1 text-uppercase line-pointer ]" data-line-pointer-hidden={!(active === index)} key={`key${index}`}>
                                                 <Button attributes={{
                                                     "id": `tab-${index + 1}`,
                                                     "aria-controls": `event-${index + 1}`,
@@ -70,9 +70,13 @@ export default function FeatureEvents(props) {
                                     className="[ feature-events__content ] [ stack ] [ text-center//below-lg items-align-center//below-lg items-align-start//above-lg ]">
                                     <h2 className="title-3">{event.name}</h2>
                                     <p className="measure-4">{event.desc}</p>
-                                    <Button to="/reservation" content="book a table"/>
+                                    <Button to="/reservation" utils="space-fluid-1" content="book a table"/>
                                 </div>
-                                <Image onLoad={() => handleLoad()} name={event.image.name} alt={event.image.alt} lazy={event.image.lazy}
+                                <Image onLoad={() => handleLoad()}
+                                       name={event.image.name}
+                                       alt={event.image.alt}
+                                       lazy={event.image.lazy}
+                                       utils="shadow-3"
                                        resolutionW={event.image.resolutionW}
                                 />
                             </div>

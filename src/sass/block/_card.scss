@@ -1,5 +1,6 @@
 
 .card-meal {
+	$_bp-column    : 26rem;
 	container-type : inline-size;
 
 	&__container {
@@ -7,7 +8,7 @@
 		align-items : center;
 
 		@media (width <= $width-lg) {
-			@container (width <= 26em) {
+			@container (width <= #{$_bp-column}) {
 				flex-direction : column;
 			}
 		}
@@ -15,7 +16,7 @@
 
 	&__content {
 		@media (width <= $width-lg) {
-			@container (width <= 26em) {
+			@container (width <= #{$_bp-column}) {
 				display     : flex;
 				align-items : center;
 				text-align  : center;
@@ -27,9 +28,21 @@
 		max-inline-size : 10rem;
 
 		@media (width <= $width-lg) {
-			@container (width <= 26em) {
+			@container (width <= #{$_bp-column}) {
 				max-inline-size : 100%;
 				width           : 100%;
+			}
+		}
+	}
+
+	&:has(.line-pointer) :where(img, picture) {
+		z-index : 1;
+	}
+
+	.line-pointer::before {
+		@media (width <= $width-lg) {
+			@container (width <= #{$_bp-column}) {
+				display : none;
 			}
 		}
 	}

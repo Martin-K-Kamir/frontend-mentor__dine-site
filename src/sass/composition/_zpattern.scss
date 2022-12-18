@@ -8,18 +8,20 @@
 
 	&__block,
 	& > div {
-		--_space    : var(--space, calc(#{$space} * var(--_scale, var(--scale))));
-		--space     : initial; // Reset the variable to its initial value.
+		--_space-portion   : 2.25;
+		--_space-inherited : calc(var(--space) / var(--_space-portion));
+		--_space           : var(--_space-inherited, calc(#{$space} * var(--_scale, var(--scale))));
 
-		display     : grid;
-		align-items : center;
-		gap         : var(--_space);
+		display            : grid;
+		align-items        : center;
+		gap                : var(--_space);
 
 		@media (width <= $width-lg) {
-			--_scale    : calc(var(--scale) / 2);
+			--_scale : calc(var(--scale) / 2);
 		}
 
 		@media (width > $width-lg) {
+			--_space-portion  : 1.5;
 			grid-auto-columns : 1fr;
 			grid-auto-flow    : column;
 		}
