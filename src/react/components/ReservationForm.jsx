@@ -96,7 +96,7 @@ export default function ReservationForm() {
         if (unformattedHour < openHour || (unformattedHour === openHour && minsObj.value < openMins)) {
             setError(`Restaurant opens at ${openHour}:${formatMins(openMins)} AM`);
             setTimeValid(false);
-        } else if (unformattedHour === closeHour -1 && minsObj.value >= closeMins) {
+        } else if (unformattedHour === closeHour -1 && minsObj.value > closeMins) {
             setError(`Last reservation is at ${closeHour - 12 - 1}:${formatMins(openMins)} PM`);
             setTimeValid(false);
         } else if (unformattedHour >= closeHour || (unformattedHour === closeHour && minsObj.value > closeMins)) {

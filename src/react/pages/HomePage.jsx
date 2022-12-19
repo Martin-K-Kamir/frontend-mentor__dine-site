@@ -11,10 +11,10 @@ export default function HomePage() {
                   button={{to: "/reservation", content: "Book a table"}}
                   image={{dir: "homepage"}}
             />
-            <section className="space-fluid-6" data-section-overlaps="true" data-reduce-overlaps="true">
+            <section className="space-fluid-6 pattern-curve" style={{"--_top" : "15%", "--length-pattern-curve" : '60%'}} data-section-overlaps="true" data-reduce-overlaps="true">
                 <div className="wrapper">
                     <div className="[ zpattern ] [ text-center//below-lg ]" data-zpattern-first="media">
-                        <div>
+                        <div className="">
                             <div className="[ stack ] [ items-align-center//below-lg ]">
                                 <h2 className="[ title-3 ] [ title-border ]">Enjoyable place for all the family</h2>
                                 <p className="measure-4">Our relaxed surroundings make dining with us a great experience for everyone. We can even
@@ -28,7 +28,7 @@ export default function HomePage() {
                                    resolutionW={[[540, 1080], [573, 1146], [327, 654]]}
                             />
                         </div>
-                        <div className="pattern-lines" data-pattern-lines-align="center" data-pattern-lines-justify="end">
+                        <div className=" pattern-lines" data-pattern-lines-align="center" data-pattern-lines-justify="end">
                             <div className="[ stack ] [ items-align-center//below-lg ]">
                                 <h2 className="[ title-3 ] [ title-border ]">The most locally sourced food</h2>
                                 <p className="measure-4">All our ingredients come directly from our farm or local fishery. So you can be sure that
@@ -96,7 +96,7 @@ export default function HomePage() {
                     </div>
                 </div>
             </section>
-            <section className="space-fluid-6">
+            <section className="pattern-curve space-fluid-6" style={{"--length-pattern-curve" : '40%'}}>
                 <div className="wrapper">
                     <FeatureEvents data={[
                         {

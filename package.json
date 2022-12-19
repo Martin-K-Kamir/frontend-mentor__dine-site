@@ -17,6 +17,13 @@
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",
+    "cssnano": "^5.1.14",
+    "postcss": "^8.4.20",
+    "postcss-cli": "^10.1.0",
+    "postcss-combine-duplicated-selectors": "^10.0.3",
+    "postcss-combine-media-query": "^1.0.1",
+    "postcss-extract-media-query": "^3.0.0",
+    "postcss-variable-compress": "^2.0.1",
     "sass": "^1.56.1",
     "vite": "^3.2.3"
   }

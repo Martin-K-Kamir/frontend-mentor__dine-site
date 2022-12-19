@@ -26,12 +26,12 @@
 			'space-types' : (
 					'base' : 0.8rem,
 					'ratio' : 1.200,
-					'length' : 10,
+					'length' : 9,
 			),
 			'fluid-space-types' : (
 					'base' : ('min': 2.25rem, 'max': 3rem),
 					'ratio' : ('min': 1.175, 'max': 1.200),
-					'length' : 8,
+					'length' : 7,
 			),
 			'utilities' : (
 					'src' : (
@@ -167,6 +167,37 @@
 			inline-size      : 9rem;
 			block-size       : 4.75rem;
 			background-image : url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'160\' height=\'76\'%3E%3Cg fill=\'%239E7F66\' fill-rule=\'evenodd\'%3E%3Cpath d=\'M0 70h160v6H0zM0 56h160v6H0zM0 42h160v6H0zM0 28h160v6H0zM0 14h160v6H0zM0 0h160v6H0z\'/%3E%3C/g%3E%3C/svg%3E');
+		}
+	}
+}
+
+.pattern-curve {
+	--_bg       : var(--bg-pattern-curve, 0, 0%, 95%);
+	--_top      : 0;
+	--_right    : auto;
+	--_bottom   : auto;
+	--_left     : 0;
+	--_x        : 0%;
+	--_y        : 0%;
+	--_radius   : 6.25rem;
+	--_radius-1 : 0;
+	--_radius-2 : var(--_radius);
+	--_radius-3 : 0;
+	--_radius-4 : 0;
+	--_lenght   : var(--length-pattern-curve, 100%);
+	position    : relative;
+
+	&::before {
+		@media (width > $width-md) {
+			content          : '';
+			position         : absolute;
+			inset            : var(--_top) var(--_right) var(--_bottom) var(--_left);
+			border-radius    : var(--_radius-1) var(--_radius-2) var(--_radius-3) var(--_radius-4);
+			z-index          : -1;
+			translate        : var(--_x) var(--_y);
+			block-size       : 18rem;
+			inline-size      : var(--_lenght);
+			background-color : hsl(var(--_bg));
 		}
 	}
 }
