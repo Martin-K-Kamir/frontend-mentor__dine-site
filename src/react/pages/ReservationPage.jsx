@@ -10,6 +10,7 @@ export default function ReservationPage() {
             >
                 <ReservationForm/>
             </Hero>
+            <span className="pattern-curve" style={{"--_bottom" : "0%", "--_radius-3": "var(--_radius)", "--_length" : '70%'}} aria-hidden="true"></span>
             {/*<div className="boxes wrapper">*/}
             {/*    <div className="box space-1"></div>*/}
             {/*    <div className="box space-2"></div>*/}

@@ -43,6 +43,18 @@
 		}
 	}
 
+	.form {
+		max-inline-size : 32rem;
+		inline-size     : 100%;
+		padding-block   : var(--space-fluid-2);
+		padding-inline  : var(--space-5);
+		box-shadow      : var(--shadow-3);
+
+		@media (width > $width-xs) {
+			padding : var(--space-fluid-2);
+		}
+	}
+
 	picture {
 		position : relative;
 	}

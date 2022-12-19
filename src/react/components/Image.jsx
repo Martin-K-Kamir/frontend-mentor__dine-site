@@ -37,8 +37,7 @@ export default function Image(props) {
     }
 
     return (
-        <picture onLoad={handleLoad} className={props.className}
-                 className={getUtils()}>
+        <picture onLoad={handleLoad} className={getUtils()}>
             {imageSizes.map((imageSize, index) => (
                 <source
                     key={`key${index}`}

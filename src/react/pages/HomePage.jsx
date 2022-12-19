@@ -11,10 +11,11 @@ export default function HomePage() {
                   button={{to: "/reservation", content: "Book a table"}}
                   image={{dir: "homepage"}}
             />
-            <section className="space-fluid-6 pattern-curve" style={{"--_top" : "15%", "--length-pattern-curve" : '60%'}} data-section-overlaps="true" data-reduce-overlaps="true">
+            <section className="space-fluid-6" data-section-overlaps="true" data-reduce-overlaps="true">
+                <span className="pattern-curve" style={{"--_top" : "20%", "--_radius-2": "var(--_radius)", "--_length" : "62%"}} aria-hidden="true"></span>
                 <div className="wrapper">
                     <div className="[ zpattern ] [ text-center//below-lg ]" data-zpattern-first="media">
-                        <div className="">
+                        <div>
                             <div className="[ stack ] [ items-align-center//below-lg ]">
                                 <h2 className="[ title-3 ] [ title-border ]">Enjoyable place for all the family</h2>
                                 <p className="measure-4">Our relaxed surroundings make dining with us a great experience for everyone. We can even
@@ -28,7 +29,8 @@ export default function HomePage() {
                                    resolutionW={[[540, 1080], [573, 1146], [327, 654]]}
                             />
                         </div>
-                        <div className=" pattern-lines" data-pattern-lines-align="center" data-pattern-lines-justify="end">
+                        <div>
+                            <span className="pattern-lines" style={{"--_top" : "50%", "--_right" : "0", "--_x" : "50%", "--_y" : "-50%"}} aria-hidden="true"></span>
                             <div className="[ stack ] [ items-align-center//below-lg ]">
                                 <h2 className="[ title-3 ] [ title-border ]">The most locally sourced food</h2>
                                 <p className="measure-4">All our ingredients come directly from our farm or local fishery. So you can be sure that
@@ -47,6 +49,7 @@ export default function HomePage() {
             </section>
 
             <section className="space-fluid-6 bg-neutral-2 fg-neutral-1">
+                <span className="pattern-curve" style={{"--_top" : "0%", "--_right" : "0", "--_y" : "-100%", "--_radius-1": "var(--_radius)", "--_length" : '65%'}} aria-hidden="true"></span>
                 <div className="wrapper">
                     <div className="[ even-columns flow ] [ space-fluid-3 direction-column//below-lg ]">
                         <div className="[ stack ] [ items-align-center//below-lg text-center//below-lg ]">
@@ -96,7 +99,8 @@ export default function HomePage() {
                     </div>
                 </div>
             </section>
-            <section className="pattern-curve space-fluid-6" style={{"--length-pattern-curve" : '40%'}}>
+            <section className="space-fluid-6">
+                <span className="pattern-curve" style={{"--_top" : "0%", "--_radius-2": "var(--_radius)", "--_length" : '40%'}} aria-hidden="true"></span>
                 <div className="wrapper">
                     <FeatureEvents data={[
                         {

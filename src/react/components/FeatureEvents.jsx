@@ -38,7 +38,8 @@ export default function FeatureEvents(props) {
 
     return (
         <div className="feature-events" style={{...getHeight()}}>
-            <div className="[ feature-events__container ] [ stack ] [ pattern-lines ]" data-pattern-lines-layer="infront" ref={ref}>
+            <span className="pattern-lines" style={{"--_top" : "0%", "--_x" : "-50%", "--_y" : "-50%", "--_layer" : "2"}} aria-hidden="true"></span>
+            <div className="[ feature-events__container ] [ stack ]" ref={ref}>
                 {props.data.map((event, index) => {
                     if (index === active) {
                         return (

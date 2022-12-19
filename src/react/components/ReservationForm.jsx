@@ -135,7 +135,7 @@ export default function ReservationForm() {
     }
 
     return (
-        <form action="#" id="reservationForm" className="form" name="reservationForm" data-type="box">
+        <form action="#" id="reservationForm" className="form" name="reservationForm">
             <div className="[ form__container ] [ stack ] [ space-5 ]">
                 <div className="form__group">
                     <label htmlFor={nameObj.key} data-type="popsout">{nameObj.key}</label>

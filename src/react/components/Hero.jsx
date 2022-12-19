@@ -2,6 +2,7 @@ import {Link} from "react-router-dom";
 import Button from "./Button.jsx";
 import Image from "./Image.jsx";
 import Logo from "./Logo.jsx";
+import React from "react";
 
 export default function Hero(props) {
     return (
@@ -20,7 +21,8 @@ export default function Hero(props) {
                         {props.button && <Button to={props.button.to} content={props.button.content} type="ghost"/>}
                     </div>
                 </div>
-                {props.children && <div className="pattern-lines items-justify-center//below-lg self-justify-stretch//below-lg self-align-start//below-lg self-align-center//above-lg" data-pattern-lines-layer="behind" data-pattern-lines-align='end'>
+                {props.children && <div className="items-justify-center//below-lg self-justify-stretch//below-lg self-align-start//below-lg self-align-center//above-lg">
+                    {props.children && <span className="pattern-lines" style={{"--_bottom" : "0%", "--_x" : "-50%", "--_y" : "50%", "--_layer" : "-1"}} aria-hidden="true"></span>}
                     {props.children}
                 </div>}
             </div>
