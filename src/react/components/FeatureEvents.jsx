@@ -38,9 +38,9 @@ export default function FeatureEvents(props) {
 
     return (
         <div className="feature-events" style={{...getHeight()}}>
-        {/*// <div className="feature-events">*/}
+        {/*<div className="feature-events">*/}
             <span className="pattern-lines" style={{"--_top" : "0%", "--_x" : "-50%", "--_y" : "-50%", "--_layer" : "2"}} aria-hidden="true"></span>
-            <div className="[ feature-events__container ] [ stack ]" ref={ref}>
+            <div className="feature-events__container" ref={ref}>
                 {props.data.map((event, index) => {
                         return (
                             <div className="[ feature-events__item ] [ flow ]" key={`key${index}`} id={`event-${index + 1}`} role="tabpanel"
