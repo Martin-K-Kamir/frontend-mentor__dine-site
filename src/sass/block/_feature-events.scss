@@ -11,7 +11,7 @@
 				'content';
 
 
-		&[aria-selected='false'] {
+		&[data-selected='false'] {
 			opacity    : 0;
 			visibility : hidden;
 			position   : absolute;
