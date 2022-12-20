@@ -15,6 +15,9 @@
 			opacity    : 0;
 			visibility : hidden;
 			position   : absolute;
+			clip       : rect(0, 0, 0, 0);
+			block-size : 1px;
+			overflow   : hidden;
 		}
 
 		@media (width > $width-lg) {
