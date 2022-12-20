@@ -7,11 +7,11 @@ body {
 	color            : hsl(var(--clr-secondary-3));
 	background-color : hsl(var(--clr-neutral-1));
 
-	@media (width <= $width-md) {
+	@media (max-width: $width-md) {
 		background-color: blue;
 	}
 
-	@media (width > $width-md) {
+	@media (min-width: $width-md) {
 		background-color: red;
 	}
 }
