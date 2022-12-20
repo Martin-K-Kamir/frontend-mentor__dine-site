@@ -22,13 +22,22 @@ export default function Image(props) {
     }
 
     function getMedia(i) {
-        if (props.mediaSizes === "none") return "false";
+        if (props.mediaSizes === "none") return undefined;
         if (mediaSizes[i]) return `(width > ${mediaSizes[i]})`;
     }
 
     function handleLoad() {
         if (!props.onLoad) return;
         props.onLoad();
+    }
+
+    function getDimension(size, i) {
+        if(!props.dimension) return undefined;
+        if (size === 'width') {
+            return props.dimension[i][0]
+        } else if (size === 'height') {
+            return props.dimension[i][1]
+        }
     }
 
     return (
@@ -38,13 +47,15 @@ export default function Image(props) {
                     key={`key${index}`}
                     media={getMedia(index)}
                     srcSet={getSrcSet(imageSize, index)}
+                    width={getDimension("width", index)}
+                    height={getDimension("height", index)}
                 />
             ))}
 
             <img loading={props.lazy ? "lazy" : "eager"}
                  fetchpriority={props.fetchPriority ? props.fetchPriority : 'auto'}
-                 width={props.width}
-                 height={props.height}
+                 width={getDimension("width", 0)}
+                 height={getDimension("height", 0)}
                  aria-hidden={!props.alt}
                  alt={props.alt ? props.alt : ""}
                  src={`${getPath()}-${imageSizes[0]}.jpg`}

@@ -46,7 +46,7 @@ export default function FeatureEvents(props) {
                             <div className="[ feature-events__item ] [ flow ]" key={`key${index}`} id={`event-${index + 1}`} role="tabpanel"
                                  tabIndex={index === active ? "0" : "-1"} aria-labelledby={`tab-${index + 1}`} aria-selected={index === active}>
                                 <div
-                                    className="[ feature-events__tabs ][ flow ] [ space-4 direction-column//below-md direction-row//below-lg items-justify-center//below-lg align-start//above-lg ]"
+                                    className="[ feature-events__tabs ] [ flow ] [ space-4 direction-column//below-md direction-row//below-lg items-justify-center//below-lg align-start//above-lg ]"
                                     role="tablist"
                                     aria-label="Tabs for special events"
                                 >
@@ -79,6 +79,7 @@ export default function FeatureEvents(props) {
                                        lazy={event.image.lazy}
                                        utils="shadow-3"
                                        resolutionW={event.image.resolutionW}
+                                       dimension={event.image.dimension}
                                 />
                             </div>
                         )

@@ -27,6 +27,7 @@ export default function HomePage() {
                                    lazy={true}
                                    utils="shadow-3"
                                    resolutionW={[[540, 1080], [573, 1146], [327, 654]]}
+                                   dimension={[[515, 686], [787, 494], [388, 473]]}
                             />
                         </div>
                         <div>
@@ -42,6 +43,7 @@ export default function HomePage() {
                                    lazy={true}
                                    utils="shadow-3"
                                    resolutionW={[[540, 1080], [573, 1146], [327, 654]]}
+                                   dimension={[[515, 686], [787, 494], [388, 473]]}
                             />
                         </div>
                     </div>
@@ -62,8 +64,9 @@ export default function HomePage() {
                             <div className="card-meal">
                                 <div className="[ card-meal__container ] [ flow ] [ space-fluid-1 ]">
                                     <Image name="salmon" mediaSizes={"none"} imageSizes={["mobile"]} lazy={true}
-                                           resolutionW={[[327, 654]]}
                                            alt="Salmon with fresh salad on plate"
+                                           resolutionW={[[327, 654]]}
+                                           dimension={[[160, 119]]}
                                     />
                                     <div className="[ card-meal__content ] [ stack ]">
                                         <h3 className="[ title-2 ] [ line-pointer ]">Seared Salmon Fillet</h3>
@@ -74,8 +77,9 @@ export default function HomePage() {
                             <div className="card-meal">
                                 <div className="[ card-meal__container ] [ flow ] [ space-fluid-1 ]">
                                     <Image name="beef" mediaSizes={"none"} imageSizes={["mobile"]} lazy={true}
-                                           resolutionW={[[327, 654]]}
                                            alt="Filet Mignon on plate"
+                                           resolutionW={[[327, 654]]}
+                                           dimension={[[160, 119]]}
                                     />
                                     <div className="[ card-meal__content ] [ stack ]">
                                         <h3 className="[ title-2 ] [ line-pointer ]">Rosemary Filet Mignon</h3>
@@ -86,8 +90,9 @@ export default function HomePage() {
                             <div className="card-meal">
                                 <div className="[ card-meal__container ] [ flow ] [ space-fluid-1 ]">
                                     <Image name="chocolate" mediaSizes={"none"} imageSizes={["mobile"]} lazy={true}
-                                           resolutionW={[[327, 654]]}
                                            alt="Chocolate Mousse sprinkled with pomegranate seeds"
+                                           resolutionW={[[327, 654]]}
+                                           dimension={[[160, 119]]}
                                     />
                                     <div className="[ card-meal__content ] [ stack ]">
                                         <h3 className="[ title-2 ] [ line-pointer ]">Summer Fruit Chocolate Mousse</h3>
@@ -110,7 +115,8 @@ export default function HomePage() {
                                 name: "family-gathering",
                                 alt: "Family sitting at table",
                                 lazy: true,
-                                resolutionW: [[540, 1080], [573, 1146], [326, 652]]
+                                resolutionW: [[540, 1080], [573, 1146], [326, 652]],
+                                dimension: [[513, 570], [787, 494], [387, 475]]
                             }
                         },
                         {
@@ -120,7 +126,8 @@ export default function HomePage() {
                                 name: "special-events",
                                 alt: "Family sitting at table",
                                 lazy: true,
-                                resolutionW: [[540, 1080], [573, 1146], [326, 652]]
+                                resolutionW: [[540, 1080], [573, 1146], [326, 652]],
+                                dimension: [[513, 570], [787, 494], [387, 475]]
                             }
                         },
                         {
@@ -130,7 +137,8 @@ export default function HomePage() {
                                 name: "social-events",
                                 alt: "Family sitting at table",
                                 lazy: true,
-                                resolutionW: [[540, 1080], [573, 1146], [326, 652]]
+                                resolutionW: [[540, 1080], [573, 1146], [326, 652]],
+                                dimension: [[513, 570], [787, 494], [387, 475]]
                             }
 
                         },
