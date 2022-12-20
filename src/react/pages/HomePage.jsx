@@ -105,7 +105,7 @@ export default function HomePage() {
                     <FeatureEvents data={[
                         {
                             name: "Family Gathering",
-                            desc: "We love catering for entire families. So please bring everyone along for a special meal with your loved ones. We’ll provide a memorable experience for all.",
+                            desc: "We love catering for entire families. So please bring everyone along for a special meal with your loved ones. We’ll provide a memorable experience for your family.",
                             image: {
                                 name: "family-gathering",
                                 alt: "Family sitting at table",
