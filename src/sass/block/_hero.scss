@@ -3,7 +3,9 @@
 .hero {
 	display        : grid;
 	min-block-size : 100vh;
-	@media (width > $width-md) {
+
+	// diff syntax as fix for postcss-combine-media-query
+	@media (min-width: $width-md) and (max-width: $width-lg) {
 		min-block-size : 65rem;
 	}
 

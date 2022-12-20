@@ -94,15 +94,15 @@
 }
 
 .line-pointer {
-	--_pointer-length : var(--pointer-length, 8rem);
-	position          : relative;
+	--_length : 8rem;
+	position  : relative;
 
 	&::before {
 		content          : '';
 		position         : absolute;
 		inset            : calc(50% - 0.115em) auto auto 0;
 		translate        : calc(-100% - 1.25em) -50%;
-		inline-size      : var(--_pointer-length);
+		inline-size      : var(--_length);
 		height           : 1px;
 		background-color : hsl(var(--clr-primary-1));
 	}
@@ -124,7 +124,7 @@
 }
 
 *:has( > [class*='pattern-']) {
-	position: relative;
+	position : relative;
 }
 
 [class*='pattern-'] {
@@ -136,15 +136,15 @@
 	--_y      : 0%;
 
 	@media (width > $width-md) {
-		position         : absolute;
-		display          : block;
-		inset            : var(--_top) var(--_right) var(--_bottom) var(--_left);
-		translate        : var(--_x) var(--_y);
+		position  : absolute;
+		display   : block;
+		inset     : var(--_top) var(--_right) var(--_bottom) var(--_left);
+		translate : var(--_x) var(--_y);
 	}
 }
 
 .pattern-lines {
-	--_layer  : 1;
+	--_layer : 1;
 
 	@media (width > $width-md) {
 		z-index          : var(--_layer);
@@ -155,7 +155,6 @@
 }
 
 .pattern-curve {
-	--_bg       : var(--bg, 0, 0%, 97%);
 	--_radius   : 6.25rem;
 	--_radius-1 : 0;
 	--_radius-2 : 0;
@@ -168,6 +167,6 @@
 		z-index          : -1;
 		block-size       : 20rem;
 		inline-size      : var(--_length);
-		background-color : hsl(var(--_bg));
+		background-color : hsl(0, 0%, 97%);
 	}
 }
