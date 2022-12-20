@@ -38,13 +38,13 @@ export default function FeatureEvents(props) {
 
     return (
         <div className="feature-events" style={{...getHeight()}}>
+        {/*// <div className="feature-events">*/}
             <span className="pattern-lines" style={{"--_top" : "0%", "--_x" : "-50%", "--_y" : "-50%", "--_layer" : "2"}} aria-hidden="true"></span>
             <div className="[ feature-events__container ] [ stack ]" ref={ref}>
                 {props.data.map((event, index) => {
-                    if (index === active) {
                         return (
                             <div className="[ feature-events__item ] [ flow ]" key={`key${index}`} id={`event-${index + 1}`} role="tabpanel"
-                                 tabIndex="0" aria-labelledby={`tab-${index + 1}`}>
+                                 tabIndex={index === active ? "0" : "-1"} aria-labelledby={`tab-${index + 1}`} aria-selected={index === active}>
                                 <div
                                     className="[ feature-events__tabs ][ flow ] [ space-4 direction-column//below-md direction-row//below-lg items-justify-center//below-lg align-start//above-lg ]"
                                     role="tablist"
@@ -82,7 +82,6 @@ export default function FeatureEvents(props) {
                                 />
                             </div>
                         )
-                    }
                 })}
             </div>
         </div>

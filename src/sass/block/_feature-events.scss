@@ -10,6 +10,11 @@
 				'tabs'
 				'content';
 
+
+		&[aria-selected='false'] {
+			display : none;
+		}
+
 		@media (width > $width-lg) {
 			--space             : var(--space-fluid-4);
 
@@ -28,6 +33,8 @@
 		}
 	}
 
+
+
 	&__content {
 		grid-area : content;
 
@@ -41,8 +48,8 @@
 	}
 
 	&__tabs span[data-unactive='true'] {
-		opacity : 0.35;
-		transition: opacity 200ms ease-in-out;
+		opacity    : 0.35;
+		transition : opacity 200ms ease-in-out;
 	}
 
 	&__tabs span[data-unactive='true']:where(:hover, :focus-visible) {
