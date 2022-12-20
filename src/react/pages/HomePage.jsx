@@ -16,7 +16,7 @@ export default function HomePage() {
                 <div className="wrapper">
                     <div className="[ zpattern ] [ text-center//below-lg ]" data-zpattern-first="media">
                         <div>
-                            <div className="[ stack ] [ items-align-center//below-lg ]">
+                            <div className="[ stack ] [ items-align-center//below-lg ]" data-aos="show-in" data-aos-duration="800">
                                 <h2 className="[ title-3 ] [ title-border ]">Enjoyable place for all the family</h2>
                                 <p className="measure-4">Our relaxed surroundings make dining with us a great experience for everyone. We can even
                                     arrange a tour of the
@@ -32,7 +32,7 @@ export default function HomePage() {
                         </div>
                         <div>
                             <span className="pattern-lines" style={{"--_top" : "50%", "--_right" : "0", "--_x" : "50%", "--_y" : "-50%"}} aria-hidden="true"></span>
-                            <div className="[ stack ] [ items-align-center//below-lg ]">
+                            <div className="[ stack ] [ items-align-center//below-lg ]" data-aos="show-in" data-aos-duration="800">
                                 <h2 className="[ title-3 ] [ title-border ]">The most locally sourced food</h2>
                                 <p className="measure-4">All our ingredients come directly from our farm or local fishery. So you can be sure that
                                     you’re eating the
@@ -62,7 +62,7 @@ export default function HomePage() {
                         </div>
                         <div className="[ stack ] [ space-3 stack-border ]" >
                             <div className="card-meal">
-                                <div className="[ card-meal__container ] [ flow ] [ space-fluid-1 ]">
+                                <div className="[ card-meal__container ] [ flow ] [ space-fluid-1 ]" data-aos="show-in" data-aos-duration="800">
                                     <Image name="salmon" mediaSizes={"none"} imageSizes={["mobile"]} lazy={true}
                                            alt="Salmon with fresh salad on plate"
                                            resolutionW={[[327, 654]]}
@@ -75,7 +75,7 @@ export default function HomePage() {
                                 </div>
                             </div>
                             <div className="card-meal">
-                                <div className="[ card-meal__container ] [ flow ] [ space-fluid-1 ]">
+                                <div className="[ card-meal__container ] [ flow ] [ space-fluid-1 ]" data-aos="show-in" data-aos-duration="800" data-aos-delay="30">
                                     <Image name="beef" mediaSizes={"none"} imageSizes={["mobile"]} lazy={true}
                                            alt="Filet Mignon on plate"
                                            resolutionW={[[327, 654]]}
@@ -88,7 +88,7 @@ export default function HomePage() {
                                 </div>
                             </div>
                             <div className="card-meal">
-                                <div className="[ card-meal__container ] [ flow ] [ space-fluid-1 ]">
+                                <div className="[ card-meal__container ] [ flow ] [ space-fluid-1 ]" data-aos="show-in" data-aos-duration="800" data-aos-delay="60">
                                     <Image name="chocolate" mediaSizes={"none"} imageSizes={["mobile"]} lazy={true}
                                            alt="Chocolate Mousse sprinkled with pomegranate seeds"
                                            resolutionW={[[327, 654]]}
@@ -149,7 +149,9 @@ export default function HomePage() {
             <section className="[ stacked ] [ bg-neutral-2 fg-neutral-1 ]" data-extrinsic-sizing="true">
                 <Image name="ready-bg" lazy={true} resolutionW={[[1440, 2880], [768, 1536], [375, 750]]}/>
                 <div
-                    className="[ wrapper flow ] [ space-3 text-center//below-lg items-justify-center//below-lg items-align-center//above-lg direction-row//above-lg justify-between//above-lg ]">
+                    className="[ wrapper flow ] [ space-3 text-center//below-lg items-justify-center//below-lg items-align-center//above-lg direction-row//above-lg justify-between//above-lg ]"
+                    data-aos="show-in" data-aos-duration="800"
+                >
                     <h2 className="[ title-3 ] [ measure-7 ]">Ready to make a reservation?</h2>
                     <Button to="/reservation" content="book a table" type="ghost"/>
                 </div>

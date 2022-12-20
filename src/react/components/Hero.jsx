@@ -13,9 +13,15 @@ export default function Hero(props) {
                    resolutionW={[[1440, 2880], [768, 1536], [375, 750]]}
             />
         <div className="[ hero__wrapper ] [ wrapper flow ] [ space-6 items-justify-center//below-lg direction-row//above-lg ]">
-                <div className=" [ hero__content ] [ flow ] [ items-justify-center//below-lg align-center//below-lg ]">
+                <div className=" [ hero__content ] [ flow ] [ items-justify-center//below-lg align-center//below-lg ]" data-aos="show-in"
+                     data-aos-duration="800">
                     <Link to="/" aria-label="homepage"><Logo/></Link>
-                    <div className="[ stack ] [ text-center//below-lg items-align-center//below-lg items-align-start//above-lg ]" data-inherit-space="true">
+                    <div className="[ stack ] [ text-center//below-lg items-align-center//below-lg items-align-start//above-lg ]"
+                         data-inherit-space="true"
+                         data-aos="show-in"
+                         data-aos-duration="800"
+                         data-aos-delay="100"
+                    >
                         <h1 className="title-4">{props.title}</h1>
                         <p className="measure-4" data-inherit-space="false">{props.desc}</p>
                         {props.button && <Button to={props.button.to} content={props.button.content} type="ghost"/>}

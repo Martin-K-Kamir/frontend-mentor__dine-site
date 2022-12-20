@@ -1,0 +1,16 @@
+[data-aos="show-in"] {
+	opacity: 0;
+	transition-property: transform, opacity;
+
+	&.aos-animate {
+		opacity: 1;
+	}
+
+	@media screen and (min-width: 768px) {
+		transform: translateY(50px);
+
+		&.aos-animate {
+			transform: translateX(0);
+		}
+	}
+}

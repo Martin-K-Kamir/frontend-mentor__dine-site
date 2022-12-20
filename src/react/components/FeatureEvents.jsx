@@ -39,19 +39,19 @@ export default function FeatureEvents(props) {
     return (
         <div className="feature-events" style={{...getHeight()}}>
             <span className="pattern-lines" style={{"--_top" : "0%", "--_x" : "-50%", "--_y" : "-50%", "--_layer" : "2"}} aria-hidden="true"></span>
-            <div className="feature-events__container" ref={ref}>
+            <div className="feature-events__container" ref={ref} data-aos="show-in" data-aos-duration="800">
                 {props.data.map((event, index) => {
                         return (
                             <div className="[ feature-events__item ] [ flow ]" key={`key${index}`} id={`event-${index + 1}`} role="tabpanel"
                                  tabIndex={index === active ? "0" : "-1"} aria-labelledby={`tab-${index + 1}`} data-selected={index === active} aria-hidden={!(index === active)}>
                                 <div
-                                    className="[ feature-events__tabs ] [ flow ] [ space-4 direction-column//below-md direction-row//below-lg items-justify-center//below-lg align-start//above-lg ]"
+                                    className="[ feature-events__tabs ] [ flow ] [ space-4 direction-column//below-md direction-row//below-lg items-justify-center//below-lg self-justify-start//above-lg align-start//above-lg ]"
                                     role="tablist"
                                     aria-label="Tabs for special events"
                                 >
                                     {index === active && props.data.map((event, index) => {
                                         return (
-                                            <span className="fs-fluid-1 fw-3 line-height-1 letter-spacing-5 text-uppercase line-pointer" data-active={active === index} key={`key${index}`}>
+                                            <span className="fs-fluid-1 fw-3 line-height-1 letter-spacing-5 text-uppercase" data-active={active === index} key={`key${index}`}>
                                                 <Button attributes={{
                                                     "id": `tab-${index + 1}`,
                                                     "aria-controls": `event-${index + 1}`,
