@@ -12,7 +12,7 @@ export default function HomePage() {
                   image={{dir: "homepage"}}
             />
             <section className="space-fluid-6" data-section-overlaps="true" data-reduce-overlaps="true">
-                <span className="pattern-curve" style={{"--_top" : "20%", "--_radius-2": "var(--_radius)", "--_length" : "62%"}} aria-hidden="true"></span>
+                <span className="pattern-curve" style={{"--_top" : "16%", "--_radius-2": "var(--_radius)", "--_length" : "55%"}} aria-hidden="true"></span>
                 <div className="wrapper">
                     <div className="[ zpattern ] [ text-center//below-lg ]" data-zpattern-first="media">
                         <div>

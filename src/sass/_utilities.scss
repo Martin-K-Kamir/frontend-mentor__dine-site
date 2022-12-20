@@ -29,8 +29,8 @@
 					'length' : 9,
 			),
 			'fluid-space-types' : (
-					'base' : ('min': 2.25rem, 'max': 3rem),
-					'ratio' : ('min': 1.175, 'max': 1.200),
+					'base' : ('min': 2rem, 'max': 3rem),
+					'ratio' : ('min': 1.160, 'max': 1.200),
 					'length' : 7,
 			),
 			'utilities' : (
@@ -107,7 +107,7 @@
 		background-color : hsl(var(--clr-primary-1));
 	}
 
-	&[data-line-pointer-hidden='true']::before {
+	&[data-unactive='true']::before {
 		display : none;
 	}
 }
@@ -123,12 +123,11 @@
 	}
 }
 
-*:has( > .pattern-lines) {
+*:has( > [class*='pattern-']) {
 	position: relative;
 }
 
-.pattern-lines {
-	--_layer  : 1;
+[class*='pattern-'] {
 	--_top    : auto;
 	--_right  : auto;
 	--_bottom : auto;
@@ -140,27 +139,23 @@
 		position         : absolute;
 		display          : block;
 		inset            : var(--_top) var(--_right) var(--_bottom) var(--_left);
-		border-radius    : var(--_radius-1) var(--_radius-2) var(--_radius-3) var(--_radius-4);
-		z-index          : var(--_layer);
 		translate        : var(--_x) var(--_y);
+	}
+}
+
+.pattern-lines {
+	--_layer  : 1;
+
+	@media (width > $width-md) {
+		z-index          : var(--_layer);
 		inline-size      : 9rem;
 		block-size       : 4.75rem;
 		background-image : url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'160\' height=\'76\'%3E%3Cg fill=\'%239E7F66\' fill-rule=\'evenodd\'%3E%3Cpath d=\'M0 70h160v6H0zM0 56h160v6H0zM0 42h160v6H0zM0 28h160v6H0zM0 14h160v6H0zM0 0h160v6H0z\'/%3E%3C/g%3E%3C/svg%3E');
 	}
 }
 
-*:has( > .pattern-curve) {
-	position: relative;
-}
-
 .pattern-curve {
 	--_bg       : var(--bg, 0, 0%, 97%);
-	--_top      : auto;
-	--_right    : auto;
-	--_bottom   : auto;
-	--_left     : auto;
-	--_x        : 0%;
-	--_y        : 0%;
 	--_radius   : 6.25rem;
 	--_radius-1 : 0;
 	--_radius-2 : 0;
@@ -169,12 +164,8 @@
 	--_length   : var(--length, 100%);
 
 	@media (width > $width-md) {
-		position         : absolute;
-		display          : block;
-		inset            : var(--_top) var(--_right) var(--_bottom) var(--_left);
 		border-radius    : var(--_radius-1) var(--_radius-2) var(--_radius-3) var(--_radius-4);
 		z-index          : -1;
-		translate        : var(--_x) var(--_y);
 		block-size       : 20rem;
 		inline-size      : var(--_length);
 		background-color : hsl(var(--_bg));

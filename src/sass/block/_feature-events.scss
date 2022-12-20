@@ -40,6 +40,17 @@
 		grid-area : tabs;
 	}
 
+	&__tabs span[data-unactive='true'] {
+		opacity : 0.35;
+		transition: opacity 200ms ease-in-out;
+	}
+
+	&__tabs span[data-unactive='true']:where(:hover, :focus-visible) {
+		@media (hover : hover) {
+			opacity : 1;
+		}
+	}
+
 	p {
 		@media (width > $width-lg) {
 			display            : -webkit-box;

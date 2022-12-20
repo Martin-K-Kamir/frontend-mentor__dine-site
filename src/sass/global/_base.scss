@@ -18,10 +18,10 @@ section {
 
 	&[data-section-overlaps='true'],
 	&[data-section-overlaps='true'] + section > div {
-		--_overlap-ratio : 1;
+		--_overlap-ratio : 2;
 		--_overlap       : var(--_space) / var(--_overlap-ratio);
 
-		@media (width > $width-md) {
+		@media (width > $width-xs) {
 			--_overlap-ratio : 1.3;
 		}
 

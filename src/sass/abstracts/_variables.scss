@@ -5,10 +5,10 @@ $space          : 1em;
 $measure        : 55ch;
 
 // Screen breakpoints
-$width-xxs      : map-get(generator.$breakpoints, 'xxs');
+//$width-xxs      : map-get(generator.$breakpoints, 'xxs');
 $width-xs       : map-get(generator.$breakpoints, 'xs');
 $width-sm       : map-get(generator.$breakpoints, 'sm');
 $width-md       : map-get(generator.$breakpoints, 'md');
 $width-lg       : map-get(generator.$breakpoints, 'lg');
 $width-xl       : map-get(generator.$breakpoints, 'xl');
-$width-xxl      : map-get(generator.$breakpoints, 'xxl');
+//$width-xxl      : map-get(generator.$breakpoints, 'xxl');

@@ -237,13 +237,13 @@ $shadows         : (
 ) !default;
 
 $breakpoints     : (
-		'xxs': $width-xxs,
+		//'xxs': $width-xxs,
 		'xs': $width-xs,
 		'sm': $width-sm,
 		'md': $width-md,
 		'lg': $width-lg,
 		'xl': $width-xl,
-		'xxl': $width-xxl,
+		//'xxl': $width-xxl,
 ) !default;
 
 //////////////////////

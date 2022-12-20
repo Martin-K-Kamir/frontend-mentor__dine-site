@@ -46,13 +46,13 @@ export default function FeatureEvents(props) {
                             <div className="[ feature-events__item ] [ flow ]" key={`key${index}`} id={`event-${index + 1}`} role="tabpanel"
                                  tabIndex="0" aria-labelledby={`tab-${index + 1}`}>
                                 <div
-                                    className="[ flow ] [ space-4 direction-column//below-md direction-row//below-lg items-justify-center//below-lg align-start//above-lg ]"
+                                    className="[ feature-events__tabs ][ flow ] [ space-4 direction-column//below-md direction-row//below-lg items-justify-center//below-lg align-start//above-lg ]"
                                     role="tablist"
                                     aria-label="Tabs for special events"
                                 >
                                     {props.data.map((event, index) => {
                                         return (
-                                            <span className="[ title-1 ] [ fs-fluid-1 text-uppercase line-pointer ]" data-line-pointer-hidden={!(active === index)} key={`key${index}`}>
+                                            <span className="fs-fluid-1 fw-3 line-height-1 letter-spacing-5 text-uppercase line-pointer" data-unactive={!(active === index)} key={`key${index}`}>
                                                 <Button attributes={{
                                                     "id": `tab-${index + 1}`,
                                                     "aria-controls": `event-${index + 1}`,
