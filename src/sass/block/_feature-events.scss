@@ -51,12 +51,26 @@
 		grid-area : tabs;
 	}
 
-	&__tabs span[data-unactive='true'] {
+	&__tabs span[data-active='true'] {
+		position : relative;
+	}
+
+	&__tabs span[data-active='true']::after {
+		content          : '';
+		position         : absolute;
+		inset            : auto auto 0% 50%;
+		translate        : -50% 0.5em;
+		inline-size      : 3rem;
+		block-size       : 1px;
+		background-color : hsl(var(--clr-primary-1));
+	}
+
+	&__tabs span[data-active='false'] {
 		opacity    : 0.35;
 		transition : opacity 200ms ease-in-out;
 	}
 
-	&__tabs span[data-unactive='true']:where(:hover, :focus-visible) {
+	&__tabs span[data-active='false']:where(:hover, :focus-visible) {
 		@media (hover : hover) {
 			opacity : 1;
 		}

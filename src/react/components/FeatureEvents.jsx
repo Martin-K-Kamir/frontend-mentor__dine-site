@@ -51,7 +51,7 @@ export default function FeatureEvents(props) {
                                 >
                                     {index === active && props.data.map((event, index) => {
                                         return (
-                                            <span className="fs-fluid-1 fw-3 line-height-1 letter-spacing-5 text-uppercase line-pointer" data-unactive={!(active === index)} key={`key${index}`}>
+                                            <span className="fs-fluid-1 fw-3 line-height-1 letter-spacing-5 text-uppercase line-pointer" data-active={active === index} key={`key${index}`}>
                                                 <Button attributes={{
                                                     "id": `tab-${index + 1}`,
                                                     "aria-controls": `event-${index + 1}`,
