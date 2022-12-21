@@ -23,6 +23,6 @@ The downside of it the classes in HTML are harder to read. that's why I used the
 - Live Site URL - [Link](https://dine-martinkamir.netlify.app/)
 - My website - [Martin Kamír](https://martinkamir.com/)
 - Frontend Mentor - [@Martin-K-Kamir](https://www.frontendmentor.io/profile/Martin-K-Kamir)
-- Frontend Mentor Solution - [Solution link](https://www.frontendmentor.io/solutions/arch-studio-site-created-with-react-and-scss-bsV8ooK0-f)
+- Frontend Mentor Solution - [Solution link](https://www.frontendmentor.io/solutions/dine-restaurant-website-pq6hc0PXN9)
 
 Happy coding! 😄
