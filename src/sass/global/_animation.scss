@@ -1,12 +1,13 @@
 [data-aos="show-in"] {
 	opacity: 0;
 	transition-property: transform, opacity;
+	will-change: opacity, transform;
 
 	&.aos-animate {
 		opacity: 1;
 	}
 
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: $width-lg) {
 		transform: translateY(50px);
 
 		&.aos-animate {
